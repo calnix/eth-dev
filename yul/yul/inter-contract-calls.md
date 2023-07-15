@@ -18,7 +18,7 @@ The hex data field in a transaction is tx.data, or msg.data
 
 **Example of txn data:**
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
 
 * 1st four bytes are fn selector,&#x20;
 * concatenated to it is the first argument
