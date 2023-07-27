@@ -1,6 +1,8 @@
 # iterate Array, Return Sum
 
-## working with calldata
+We will examine two ways to iterate over a dynamic array passed as parameter into function, for which we must find the sum of elements.&#x20;
+
+## 1. Working with calldata
 
 ```solidity
 contract Question1 {
@@ -10,12 +12,13 @@ contract Question1 {
 
         assembly {
 
-            //locates the length of the string in the calldata and copies it to memory
+            // locates the length of the array in the calldata 
+            // copies it onto the stack
             let len := calldataload(0x24) 
             
             for {let i := 0} lt(i, len) {i := add(i,1)}
             {
-                // free memory pointer 
+                // update free memory pointer 
                 let ptr := add(mload(0x40), mul(i, 0x20)) 
                 
                 // creates a new in-memory copy of the input array
@@ -75,7 +78,7 @@ contract Question1 {
 
 assembly {
 
-    //locates the length of the string in the calldata and copies it to memory
+    //locates the length of the string in the calldata and copies it to stack
     // first 4 bytes are function selector - ignore: 0x20+4 = 36 bytes
     // first 32 bytes point to the location in calldata where the byte array begins - 0x20 = 32 bytes
     let len := calldataload(0x24) // stores size of array on init: 5
@@ -93,7 +96,7 @@ assembly {
 
 * this will return the first element in the array
 
-## creates in-memory copy of the input calldata
+## 2. creates in-memory copy of the input calldata
 
 ```solidity
 contract Question1 {

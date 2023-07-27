@@ -1,5 +1,13 @@
 # calldata
 
+* `CALLDATASIZE` tells the size of the transaction data.
+* `CALLDATALOAD` loads 32 bytes of the transaction data onto the stack.
+* `CALLDATACOPY` copies a number of bytes of the transaction data to memory.
+
+
+
+
+
 * [https://betterprogramming.pub/solidity-tutorial-all-about-calldata-aebbe998a5fc](https://betterprogramming.pub/solidity-tutorial-all-about-calldata-aebbe998a5fc)
 *   `offset` is the position in the calldata where the actual data of the array starts, i.e. where the first array element is located. Let's take an example:
 
