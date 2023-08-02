@@ -114,12 +114,13 @@
   * [Memory: Return, Require, Tuples and Keccak256](yul/yul/memory-return-require-tuples-and-keccak256.md)
   * [Memory: Logs and Events](yul/yul/memory-logs-and-events.md)
   * [Inter-contract calls](yul/yul/inter-contract-calls.md)
-  * [Yul Exercises](yul/yul/yul-exercises/README.md)
-    * [read state variable](yul/yul/yul-exercises/read-state-variable.md)
-    * [read mapping](yul/yul/yul-exercises/read-mapping.md)
-    * [iterate Array, Return Sum](yul/yul/yul-exercises/iterate-array-return-sum.md)
   * [calldata](yul/yul/calldata.md)
   * [free memory pointer](yul/yul/free-memory-pointer.md)
+* [Yul Exercises](yul/yul-exercises/README.md)
+  * [read state variable](yul/yul-exercises/read-state-variable.md)
+  * [read mapping](yul/yul-exercises/read-mapping.md)
+  * [iterate Array, Return Sum](yul/yul-exercises/iterate-array-return-sum.md)
+* [memory-safe](yul/memory-safe.md)
 
 ## Gas Opt
 
