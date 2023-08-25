@@ -141,8 +141,6 @@
 * [usage of this.](gas-opt/usage-of-this./README.md)
   * [multiple address(this)](gas-opt/usage-of-this./multiple-address-this.md)
 
-## Tips & Tweaks
-
 ## ERCs & EIPs
 
 * [ERC-20.sol](ercs-and-eips/erc-20.sol/README.md)
