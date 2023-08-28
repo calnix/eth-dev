@@ -93,7 +93,6 @@
 ***
 
 * [Try & catch](try-and-catch.md)
-* [Upgradeable Contracts](upgradeable-contracts.md)
 * [Ethereum Signatures](ethereum-signatures.md)
 * [EVM, Storage, Opcodes](evm-storage-opcodes/README.md)
   * [EVM](evm-storage-opcodes/evm.md)
@@ -121,6 +120,10 @@
   * [read mapping](yul/yul-exercises/read-mapping.md)
   * [iterate Array, Return Sum](yul/yul-exercises/iterate-array-return-sum.md)
 * [memory-safe](yul/memory-safe.md)
+
+## Upgradable Contracts
+
+* [Upgradability & Proxies](upgradable-contracts/upgradability-and-proxies.md)
 
 ## Gas Opt
 
