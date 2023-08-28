@@ -124,6 +124,9 @@
 ## Upgradable Contracts
 
 * [Upgradability & Proxies](upgradable-contracts/upgradability-and-proxies.md)
+* [UUPS Example](upgradable-contracts/uups-example.md)
+* [Minimal Proxy Example](upgradable-contracts/minimal-proxy-example.md)
+* [TPP Example](upgradable-contracts/tpp-example.md)
 
 ## Gas Opt
 

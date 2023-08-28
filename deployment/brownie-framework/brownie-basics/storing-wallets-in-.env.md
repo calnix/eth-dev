@@ -10,7 +10,7 @@ create .env file in project folder. input as follows, the name of the variable i
 
 ### create brownie-config.yaml
 
-![](<../../../.gitbook/assets/image (3).png>)
+![](<../../../.gitbook/assets/image (3) (1).png>)
 
 * dotenv: .env
   * tells brownie which file to look at for pulling env variables, when running scripts
