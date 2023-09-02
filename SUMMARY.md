@@ -100,6 +100,7 @@
   * [Storage](evm-storage-opcodes/storage.md)
   * [ByteCode and Opcodes](evm-storage-opcodes/bytecode-and-opcodes.md)
   * [Transaction costs & Execution costs](evm-storage-opcodes/transaction-costs-and-execution-costs.md)
+* [Data Representation](data-representation.md)
 
 ## Yul
 
