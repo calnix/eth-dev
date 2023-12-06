@@ -224,6 +224,7 @@
   * [8. Puppet](smart-contract-security/damn-vulnerable-defi/8.-puppet.md)
   * [9. Puppet V2](smart-contract-security/damn-vulnerable-defi/9.-puppet-v2.md)
   * [10 - Free Rider](smart-contract-security/damn-vulnerable-defi/10-free-rider.md)
+* [Merkle Tree: shortened proof attack](smart-contract-security/merkle-tree-shortened-proof-attack.md)
 
 ## Fixed-Point Math
 
