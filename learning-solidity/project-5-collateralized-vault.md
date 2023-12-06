@@ -30,7 +30,7 @@
 5. Liquidation
    * If ETH/DAI price changes such tt **debt\_value** _>_ **collateral\_value**, Vault will erase user records from the contract -> cancelling the user debt, and at the same time stopping that user from withdrawing their collateral.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Process
 

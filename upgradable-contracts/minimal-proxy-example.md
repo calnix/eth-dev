@@ -6,7 +6,7 @@ description: ERC-1167
 
 ## Bytecode of minimal proxy
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 1. **Initialisation code: `3d602d80600a3d3981f3`**
    * This bit is responsible for deployment and stores the runtime bytecode on-chain.

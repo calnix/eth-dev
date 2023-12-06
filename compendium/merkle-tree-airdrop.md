@@ -16,7 +16,7 @@
 
 You will need to **provide the data of the leaf** you want to check. And **all the hashes to get it from that leaf to the root**.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 * Let's assume that we want to check inclusion of the red leaf.&#x20;
 * We will need to provide that specific's leaf's data, as well as all the hashes of the blue leaves.
@@ -76,7 +76,7 @@ A bool is a uint8 under the hood. And all uints are basically uint256, in that t
 
 2. array bool\[]&#x20;
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 That's a lot of bits for just a true/false. Wasting storage space.&#x20;
 
@@ -84,7 +84,7 @@ That's a lot of bits for just a true/false. Wasting storage space.&#x20;
 
 We can use a dynamic array **uint256\[]**
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 * The first uint256 in the array will hold the bools for the first 256 addresses.&#x20;
 * We will need to index across and within the uints. First we need to find which uint the bit exists within.&#x20;
@@ -112,6 +112,6 @@ To verify the proof, the contract will require the intermediate hashes along wit
 * This API will receive the connected wallets address, as this is what we originally used to generate our leaf nodes, and return the designated proof.
 * Server-side, you would receive the address, hash it using keccak256, and retrieve the proof&#x20;
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
