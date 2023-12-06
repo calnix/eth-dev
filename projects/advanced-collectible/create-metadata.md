@@ -260,4 +260,4 @@ Reference: [https://docs.pinata.cloud/api-pinning/pin-file](https://docs.pinata.
 
 You should also see the pinned file:
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (6) (1).png>)

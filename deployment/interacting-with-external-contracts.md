@@ -13,7 +13,7 @@ Once you extract the ABI:
 
 Ensure the abi starts off in this manner: \[{....
 
-![](<../.gitbook/assets/image (11).png>)
+![](<../.gitbook/assets/image (11) (1).png>)
 
 If it starts with abi =\[.. you can drop that bit.
 

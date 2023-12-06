@@ -6,7 +6,7 @@
 
 A common event that occurs on a repo, is when someone pushes code.
 
-![test.yml](<../.gitbook/assets/image (9).png>)
+![test.yml](<../.gitbook/assets/image (9) (1).png>)
 
 * on: push
   * We specify the workflow to trigger when someone pushes new code.

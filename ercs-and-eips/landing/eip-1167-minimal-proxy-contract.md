@@ -23,7 +23,7 @@ The cost to this pattern is that every execution has a delegate call overhead.
 * Several clones can point to the same implementation contract. Clones cannot be upgraded.
 * The address of the implementation contract is stored in the bytecode. This saves gas compared to storage and prevents the clone from pointing to another implementation.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 EIP 1167 has nothing to do with upgradeability nor tries to replace it.

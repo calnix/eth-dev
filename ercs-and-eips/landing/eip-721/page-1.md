@@ -19,7 +19,7 @@
 * sellOrderDigest is the keccak256 hash of all the MakerOrder properties set when creating an order and a constant value.
 * The constant value is the typehash
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * `SELL_ORDER_TYPEHASH` -> keccak256 hash of the SellOrder struct and its fields
 * `typeHash` is to separate types -> collision resistance
@@ -32,7 +32,7 @@ Every hash function is NOT injective. Hashes map a large domain to a significant
 
 ### Buying
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
 

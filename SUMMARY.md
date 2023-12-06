@@ -89,6 +89,9 @@
 * [Smart Contract Life-cycle](compendium/smart-contract-life-cycle/README.md)
   * [Pausing Smart Contracts](compendium/smart-contract-life-cycle/pausing-smart-contracts.md)
   * [Destroying Smart Contracts](compendium/smart-contract-life-cycle/destroying-smart-contracts.md)
+* [Merkle Trie](compendium/merkle-trie/README.md)
+  * [Merkle Tree Airdrop](compendium/merkle-trie/merkle-tree-airdrop.md)
+* [Page](compendium/page.md)
 
 ***
 
