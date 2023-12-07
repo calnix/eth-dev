@@ -62,6 +62,7 @@
     * [mappings](compendium/solidity-basics/reference-types/mappings.md)
     * [struct](compendium/solidity-basics/reference-types/struct.md)
     * [Arrays](compendium/solidity-basics/reference-types/arrays.md)
+    * [Multi-Dimensional arrays](compendium/solidity-basics/reference-types/multi-dimensional-arrays.md)
   * [Global Objects](compendium/solidity-basics/global-objects.md)
   * [Functions](compendium/solidity-basics/functions/README.md)
     * [Function types](compendium/solidity-basics/functions/function-types.md)

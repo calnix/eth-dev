@@ -235,14 +235,15 @@ uint[] public arr;
 
 ## Memory Arrays
 
-**Only fixed size memory array.** Dynamic array cannot be created in memory.
+**Only fixed-size memory array.** Dynamic array cannot be created in memory. No `push/pop` available
 
-* there is no push/pop available
+* **`new`** keyword is used to initialise arrays _in memory._
 
 ```solidity
 contract Demo {
-
-    function initialize() public pure returns(uint) {
+    
+    // init, then assign later
+    function method1() public pure returns(uint) {
         //fixed size of 2
         uint[] memory val = new uint[](2);
         
@@ -251,11 +252,27 @@ contract Demo {
         return (val[0] + val[1]);       
     }
     
-    function alternative() public() {
+    //init and assign together
+    function method2() public() {
         string[3] memory myString = ["one", "two", "three"];
+    }
+
+    // no assignment done
+    function test1() public pure returns (uint256) {
+        uint256[5] memory myArr;
+    
+        return myArr.length; //length = 5
     }
 }
 ```
+
+* ```solidity
+  uint256[] memory val = new uint[](2);
+  // or
+  uint256[] memory val = [1,2,3];
+  // or
+  uint256[5] memory myArr;
+  ```
 
 ### Assignments from **`memory` to `memory` only create references.**
 
