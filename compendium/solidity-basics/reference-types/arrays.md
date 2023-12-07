@@ -243,7 +243,7 @@ Might be better off using mappings.
 ```solidity
 contract Demo {
 
-  function initialize() public pure returns(uint) {
+    function initialize() public pure returns(uint) {
         //fixed size of 2
         uint[] memory val = new uint[](2);
         
@@ -251,8 +251,38 @@ contract Demo {
         val[1] = 99;
         return (val[0] + val[1]);       
     }
+    
+    function alternative() public() {
+        string[3] memory myString = ["one", "two", "three"];
+    }
 }
 ```
+
+### Assignments from **`memory` to `memory` only create references.**
+
+* `y`, `z` and `zz` are all arrays in memory
+* Changes to one `memory` variable affect all others referencing the same data.
+
+```solidity
+contract Demo {
+
+    function f(uint256[] memory y) public {
+        // both z and zz reference the same memory location as y
+        uint256[] memory z = y;
+        uint256[] memory zz = y;
+        
+        z[1] = 10;
+        assert(y[1] == 10); // true
+        assert(zz[1] == 10); // true
+        
+        zz[0] = 6;
+        assert(y[0] == 6); // true
+        assert(z[0] == 6); // true
+    }
+}
+```
+
+
 
 
 
@@ -320,37 +350,78 @@ s[0].push(6);
 storage layout  of dynamic nested arrays: [https://www.youtube.com/watch?v=Zi4BANKFNP8](https://www.youtube.com/watch?v=Zi4BANKFNP8)
 {% endhint %}
 
-## Storage pointers&#x20;
+## Storage pointers and Data Location Effects
 
 * myArray is not a separate unique array that is created from coders.&#x20;
 * its a pointer to the location in storage where coders resides.
 * modifying values through the pointer will affect both myArray and coders.
 
 ```solidity
-contract fellowCoders {
+contract StorageDemo {
   
-    // Initialising array coders
-    uint[] public coders;
+    uint256[] x; // storage
 
-    function pushCoders() public {
-        coders.push(1);
-        coders.push(2);
+    constructor() {
+        x.push(2);
+        x.push(25);
+        x.push(12);
     }
     
     function fuckAround() public returns(uint256){
 
-        //Creates storage pointer to coders. DOES NOT COPY ARRAY
-        uint[] storage myArray = coders;
+        //Creates storage pointer to x. DOES NOT COPY ARRAY
+        uint[] storage myArray = x;
         
         // this creates a copy in memory
         uint[] memory memArray = coders;
 
-        // Overwrites coders[0]. coders[0] 1 -> 0
-        myArray[0] = 0;
+        // Overwrites x[0]: 2 -> 66
+        myArray[0] = 66;
+        assert(x[0] == 66); // true
 
-        // returns 1 
+        // returns 2 
         return memArray[0]; 
     } 
+}
+```
+
+{% hint style="info" %}
+* **Assignments between `storage` and `memory` (or from `calldata`) always create an independent copy**
+* **see:** uint\[] memory memArray = coders;
+{% endhint %}
+
+{% hint style="info" %}
+* **Assignments from `storage` to a local `storage` variable also only assign a reference**
+* **see:** uint\[] storage myArray = coders;
+{% endhint %}
+
+### Assignments to `storage` always copy, even if sourcing from reference variables
+
+```solidity
+contract Storage {
+
+    uint256[] public x; // storage by default
+
+    function f(uint256[] memory y) public {
+
+        // x is a copy of y, not a reference
+        x = y; 
+        
+        // only alters x, NOT y
+        x[0] = 100; 
+        
+        assert(x[0] != y[0]); // true
+    }
+
+    function g(uint256[] calldata z) public {
+        // x is a copy of z, not a reference
+        x = z; 
+        
+        // only alters x, NOT z
+        x[0] = 200; 
+        
+        assert(x[0] != z[0]); // true
+    }
 }
 ```
 
