@@ -1,4 +1,4 @@
-# rray
+# Arrays
 
 **Can be fixed or dynamic sized at compile-time**
 
@@ -23,31 +23,56 @@
 
 ### **Init arrays**
 
+**Fixed arrays:**
+
+* all elements initialize to 0  ->  **fixedArr1\[1] = 0**
+* can partially assign, as seen in `initializeFixedArr2()`. **fixedArr2 = \[6,0,0]**
+* length is 3, as elements are initialized to default values.
+
+**Dynamic arrays:**
+
+* have not defined no. of elements.
+* so cannot call dynArr\[0]. will revert.
+* must init w/ values first.
+* default length of 0.&#x20;
+
 ```solidity
 contract Array {
 
     // Several ways to initialize an array
     uint[] public dynArr;
-    uint[] public dynArr2 = [1, 2, 3];
+    uint[] public dynArr2 = [1, 2, 3];    
 
     // Fixed sized array, all elements initialize to 0
     uint[3] public fixedArr1;
-    uint[3] public x = [8,15,32];
+    uint[3] public fixedArr2;
+    uint[3] public x = [8, 15, 32];
 
-    function initializeFixedArr() public {
-        fixedArr= [21, 232, 43];
+    // FIXED
+
+    function updateFixedArr1() public {
+        fixedArr1 = [21, 232, 43];
     }
+
+    function updateFixedArr2() public {
+        fixedArr2[0] = 6;
+    }
+
+    function getFixedLength() public view returns (uint) {
+        return fixedArr1.length;
+    }
+
+    // DYNAMIC
 
     // will fail if dynArr has not been assigned any elements.
     // also, not needed, since dynArr is public.
     function get(uint i) public view returns (uint) {
         return dynArr[i];
     }
-   
-     function getLength() public view returns (uint) {
+
+    function getLength() public view returns (uint) {
         return dynArr.length;
     }
-
 }
 ```
 
@@ -57,8 +82,10 @@ contract Array {
 ### **Methods**
 
 * length
-* push/pop
 * delete
+* push/pop (only for dynamic)
+
+In a fixed-size array, we can not insert a new element as it increases the length of an array. To insert a new element in the dynamic size array we use the push method; this increases the length.
 
 {% hint style="info" %}
 #### **push():** append a zero-initialized element
