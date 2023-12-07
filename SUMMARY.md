@@ -61,7 +61,7 @@
     * [strings](compendium/solidity-basics/reference-types/strings.md)
     * [mappings](compendium/solidity-basics/reference-types/mappings.md)
     * [struct](compendium/solidity-basics/reference-types/struct.md)
-    * [array](compendium/solidity-basics/reference-types/array.md)
+    * [rray](compendium/solidity-basics/reference-types/rray.md)
   * [Global Objects](compendium/solidity-basics/global-objects.md)
   * [Functions](compendium/solidity-basics/functions/README.md)
     * [Function types](compendium/solidity-basics/functions/function-types.md)
