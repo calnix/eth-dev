@@ -8,6 +8,19 @@
 
 ## **Storage arrays**
 
+**Can be fixed or dynamic.**&#x20;
+
+**For fixed:**&#x20;
+
+* size must be specified during declaration.&#x20;
+* Once declared, the array size cannot be changed.&#x20;
+* Any attempt to reference beyond the last array position will result in an error.
+
+**For dynamic:**
+
+* size of the array is not mentioned during the declaration.
+* size of the dynamic array can be changed during the runtime as elements are added/removed.
+
 ### **Init arrays**
 
 ```solidity
@@ -18,7 +31,12 @@ contract Array {
     uint[] public dynArr2 = [1, 2, 3];
 
     // Fixed sized array, all elements initialize to 0
-    uint[10] public fixedArr;
+    uint[3] public fixedArr1;
+    uint[3] public x = [8,15,32];
+
+    function initializeFixedArr() public {
+        fixedArr= [21, 232, 43];
+    }
 
     // will fail if dynArr has not been assigned any elements.
     // also, not needed, since dynArr is public.
@@ -33,14 +51,20 @@ contract Array {
 }
 ```
 
-* when calling get on dynArr it will revert, as no assignment has been done.
-* can call length on an unassigned array, it will return 0.
+* When calling **`get`** on **`dynArr`** it will revert, as no assignment has been done.
+* Can call `length` on an unassigned array, it will return 0.
 
 ### **Methods**
 
 * length
 * push/pop
 * delete
+
+{% hint style="info" %}
+#### **push():** append a zero-initialized element
+
+#### **push(X):** append X&#x20;
+{% endhint %}
 
 ```solidity
 contract Array {
@@ -187,7 +211,21 @@ Might be better off using mappings.
 
 ## Memory Arrays
 
+**Only fixed size memory array.** Dynamic array cannot be created in memory.
 
+```solidity
+contract Demo {
+
+  function initialize() public pure returns(uint) {
+        //fixed size of 2
+        uint[] memory val = new uint[](2);
+        
+        val[0] = 100;        
+        val[1] = 99;
+        return (val[0] + val[1]);       
+    }
+}
+```
 
 
 
@@ -255,7 +293,41 @@ s[0].push(6);
 storage layout  of dynamic nested arrays: [https://www.youtube.com/watch?v=Zi4BANKFNP8](https://www.youtube.com/watch?v=Zi4BANKFNP8)
 {% endhint %}
 
-#### Dangling references to storage array elements
+## Storage pointers&#x20;
+
+* myArray is not a separate unique array that is created from coders.&#x20;
+* its a pointer to the location in storage where coders resides.
+* modifying values through the pointer will affect both myArray and coders.
+
+```solidity
+contract fellowCoders {
+  
+    // Initialising array coders
+    uint[] public coders;
+
+    function pushCoders() public {
+        coders.push(1);
+        coders.push(2);
+    }
+    
+    function fuckAround() public returns(uint256){
+
+        //Creates storage pointer to coders. DOES NOT COPY ARRAY
+        uint[] storage myArray = coders;
+        
+        // this creates a copy in memory
+        uint[] memory memArray = coders;
+
+        // Overwrites coders[0]. coders[0] 1 -> 0
+        myArray[0] = 0;
+
+        // returns 1 
+        return memArray[0]; 
+    } 
+}
+```
+
+### Dangling references to storage array elements
 
 1. add(): Create a dynamic array with a single nested dynamic array **uint256\[]\[] s**, such that **s\[0] = \[4,0,6]**
 2. fuckAround(): create a storage pointer to the last element in s, which is a pointer to s\[0]; since there is only 1 element.
@@ -280,7 +352,7 @@ contract Storage {
     }
 
     function fuckAround() public {
-        // ptr = s[0], reference to the storage location
+        // ptr := s[0], reference to the storage location
         uint[] storage ptr = s[s.length - 1];
         // remove s[0]
         s.pop();
