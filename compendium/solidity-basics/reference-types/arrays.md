@@ -274,6 +274,20 @@ contract Demo {
   uint256[5] memory myArr;
   ```
 
+#### Bad example
+
+```solidity
+    function test() public pure {
+        
+        uint256[] memory tree;
+        // reverts on assignment 
+        tree[0] = 1;
+    }
+```
+
+* you can compile this, but calling test() will revert.
+* you could remove the assignment and the function will no longer revert - but obviously this achieves nothing.&#x20;
+
 ### Assignments from **`memory` to `memory` only create references.**
 
 * `y`, `z` and `zz` are all arrays in memory

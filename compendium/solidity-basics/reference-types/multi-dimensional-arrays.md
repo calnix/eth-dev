@@ -1,5 +1,7 @@
 # Multi-Dimensional arrays
 
+## Nested/Multi-D arrays
+
 **Multi-dimensional arrays are essentially nested arrays (An array that contain other arrays)**
 
 * T\[k]\[k] : Two-Dimensional, Fixed-size
@@ -18,7 +20,39 @@
 * The maximum level of nesting for nested arrays is 15. If you try to create a variable with 16 nested arrays, you will get a ‘[stack too deep](https://medium.com/coinmonks/stack-too-deep-error-in-solidity-608d1bd6a1ea)’ error. As stack pointer in the EVM cannot access a slot in the stack that is deeper than is 16th element (top down).
 {% endhint %}
 
-## Mixed-size arrays
+### Indexing and Referencing
+
+Things may be a little counter-intuitive because the **X & Y axis are reversed.**
+
+```solidity
+bool[2][] flags;
+```
+
+* top-level is a dynamic array, with any number of elements
+* each nested element is a fixed-array of size 2
+
+So, to reference such things, the dynamic dimension is high order.
+
+```csharp
+bool flag = flags[dynamicIndex][lengthTwoIndex];
+```
+
+```solidity
+    uint256[2][] public flags; 
+
+    function test1() public returns(uint256) {
+        
+        flags.push([1, 2]); //flag[0]
+        flags.push([3, 4]);
+        flags.push([5, 6]);
+        flags.push([7, 8]); //flag[3]
+
+        return flags[3][1]; //returns 8
+    }
+```
+
+* When declaring, we are declaring in reverse, from bottom to the top-most level.&#x20;
+* When slicing/indexing, we operate normally, from top down.
 
 ### **Example 1**: mixed-size array
 
@@ -87,7 +121,6 @@ contract NamesAlphabet {
         
         return myArr[1].length;    //length = 4
     }
-}
 ```
 
 * ```solidity
@@ -95,3 +128,18 @@ contract NamesAlphabet {
   myArr[1].length = 4
   ```
 
+### Example 4: nested dynamic&#x20;
+
+```solidity
+    function test2() public pure returns (uint256) {
+        
+        bytes32[][] memory tree;
+        
+        //return tree.length;    //length = 0
+        return tree[0].length;    //reverts 
+
+    }
+```
+
+* tree.length = 0
+* tree\[0].length will revert.
