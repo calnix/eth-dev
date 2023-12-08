@@ -18,7 +18,7 @@ contract MyContract {
 
 In remix, go to compilation tab and select compilation details:
 
-![](<../.gitbook/assets/image (252).png>)      ![](<../.gitbook/assets/image (271).png>)
+![](<../.gitbook/assets/image (274).png>)      ![](<../.gitbook/assets/image (295).png>)
 
 We see that there is one single element under the ABI array section . This is because all we did was declare a public state variable -> for which solidity created a getter function. This getter function is the single element.
 
@@ -30,7 +30,7 @@ output -> output variables (a single string as output)
 
 Function hashes are the way how you interact with a Smart Contract on the blockchain. When a SC gets compiled, you will no longer see the readable cleartext version of code "`myString()`", rather you would see the hash `492bfa18`
 
-![](<../.gitbook/assets/image (133).png>)
+![](<../.gitbook/assets/image (231).png>)
 
 note to self: this doesn't match up exactly. could be version difference?
 
@@ -38,7 +38,7 @@ What matches up:
 
 * on deploying the contract, the value in the input field matchs the opcode in debugger:
 
-![in javaVM](<../.gitbook/assets/image (44).png>)
+![in javaVM](<../.gitbook/assets/image (64).png>)
 
 
 

@@ -7,11 +7,11 @@
 * Account state contains
   * nonce, balance, storage hash, code hash
 
-![](<../.gitbook/assets/image (93).png>) <img src="../.gitbook/assets/image (162).png" alt="" data-size="original">
+![](<../.gitbook/assets/image (145).png>) <img src="../.gitbook/assets/image (184).png" alt="" data-size="original">
 
 ### Two types of accounts
 
-![](<../.gitbook/assets/image (74).png>)![](<../.gitbook/assets/image (160).png>)
+![](<../.gitbook/assets/image (155).png>)![](<../.gitbook/assets/image (182).png>)
 
 * EOA controlled by private key and cannot contain EVM code
 * Contract Account (CA) contains EVM code
@@ -28,7 +28,7 @@
   * contraction creation
   * message call
 
-![](<../.gitbook/assets/image (150).png>)![](<../.gitbook/assets/image (186).png>)![](<../.gitbook/assets/image (183).png>)
+![](<../.gitbook/assets/image (172).png>)![](<../.gitbook/assets/image (210).png>)![](<../.gitbook/assets/image (207).png>)
 
 If contract creation:
 
@@ -49,11 +49,11 @@ If message call:
 * Message comprises of **Data** (as a set of bytes) and **Value** (specified as Ether)
 * A message can be triggered by a transaction or by EVM code
 
-<figure><img src="../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
 
 ## Atomicity of Transaction
 
@@ -64,11 +64,11 @@ If message call:
   * **Order of transactions in a block:** can be determined by Miners
   * **Order between blocks** is determined by a consensus algo: like PoW
 
-<figure><img src="../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 ## Ethereum Virtual Machine (EVM)
 
@@ -76,11 +76,11 @@ If message call:
 * The Ethereum Virtual Machine is the runtime environment for smart contracts in Ethereum
 * It is stack-based and does not have registers.
 
-<figure><img src="../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
 
 It uses [big endian](https://en.wikipedia.org/wiki/Endianness)  byte ordering for instructions, memory, and input data. [Words](https://en.wikipedia.org/wiki/Word\_\(computer\_architecture\))  in the EVM are 256 bits (32 bytes) wide.
 
@@ -88,7 +88,7 @@ It uses [big endian](https://en.wikipedia.org/wiki/Endianness)  byte ordering fo
 
 On stacks, you **PUSH** data onto the top of it, **POP** data off, and apply instructions like ADD or MULT to the first few values that lay on top of it.
 
-![](<../.gitbook/assets/image (72).png>)![](<../.gitbook/assets/image (84).png>)
+![](<../.gitbook/assets/image (152).png>)![](<../.gitbook/assets/image (130).png>)
 
 ### **Memory & Storage**
 
@@ -96,9 +96,9 @@ On stacks, you **PUSH** data onto the top of it, **POP** data off, and apply ins
 * **Memory** (volatile memory) - byte addressed linear memory.
 * **Storage** (persistent memory) - key-value store of **256 bit to 256 bit pairs**.
 
-![](<../.gitbook/assets/image (90).png>)![](<../.gitbook/assets/image (82).png>)
+![](<../.gitbook/assets/image (138).png>)![](<../.gitbook/assets/image (127).png>)
 
-<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (154).png" alt=""><figcaption></figcaption></figure>
 
 * All operations are performed on the stack
 * **Memory** is like a **big array** (that’s the “linear” part).
@@ -108,9 +108,9 @@ On stacks, you **PUSH** data onto the top of it, **POP** data off, and apply ins
 * Both the stack and memory are **volatile** (deleted after contract execution), but storage is **persistent** and stored in Ethereum’s world state (sticks around after execution).
 * Initially, all storage and memory are set to zero in the EVM.
 
-![](<../.gitbook/assets/image (76).png>)![](<../.gitbook/assets/image (187).png>)
+![](<../.gitbook/assets/image (158).png>)![](<../.gitbook/assets/image (211).png>)
 
-![](<../.gitbook/assets/image (149).png>)
+![](<../.gitbook/assets/image (171).png>)
 
 * The program code is stored in **virtual read-only memory** (**virtual ROM**) that is accessible using the CODECOPY instruction.
   * The CODECOPY instruction copies the program code into the main memory.
@@ -206,13 +206,13 @@ RETURN
 
 This is telling the evm “go ahead and return memory values 0 to 0+1”. Running that, we get a return value of `0x2`. Perfect!
 
-<figure><img src="../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 ## Message Call
 
-<figure><img src="../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/image (86).png>)![](<../.gitbook/assets/image (169).png>)
+![](<../.gitbook/assets/image (133).png>)![](<../.gitbook/assets/image (191).png>)
 
 * Every time a Solidity contract calls a function of another contract, it does so by producing a message call.
 * Every call has a sender, a recipient, a payload, a value, and an amount of gas. The depth of the message call is limited to less than 1024 levels.
@@ -229,7 +229,7 @@ This is telling the evm “go ahead and return memory values 0 to 0+1”. Runnin
 
 Memory is a volatile read-write byte-addressable space. It is mainly used to store data during execution, mostly for passing arguments to internal functions. Given this is a volatile area, every message call starts with a cleared memory. All locations are initially defined as zero. As calldata, memory can be addressed at the byte level, but can only read 32-byte words at a time.
 
-<figure><img src="../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 
 Memory is said to “expand” when we write to a word in it that was not previously used. Additionally to the cost of the write itself, there is a cost to this expansion, which increases linearly for the first 724 bytes and quadratically after that.
 
@@ -317,7 +317,7 @@ storage\[3] → unused, the mapping values are stored
 * Contracts contain a Merkle Patricia _storage_ trie associated with the account in question and part of the global state.
 * Compiled smart contract bytecode executes as a number of EVM [opcodes](https://ethereum.org/en/developers/docs/evm/opcodes), which perform standard stack operations like `XOR`, `AND`, `ADD`, `SUB`, etc. The EVM also implements a number of blockchain-specific stack operations, such as `ADDRESS`, `BALANCE`, `BLOCKHASH.`
 
-<figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
 **How many opcodes are there?**
 

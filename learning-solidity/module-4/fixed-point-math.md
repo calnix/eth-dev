@@ -45,7 +45,7 @@ To convert valueA to valueB: (18 dp -> 6 dp)
 
 **Normalize** the _**from\_token**_ by stripping it of its decimal places.&#x20;
 
-![](<../../.gitbook/assets/image (95).png>)
+![](<../../.gitbook/assets/image (146).png>)
 
 Then we scale up by the TokenB (to token) decimals
 
@@ -59,4 +59,4 @@ Then we scale up by the TokenB (to token) decimals
     valueA = (valueB / 10**6) * 10**18
 ```
 
-![](<../../.gitbook/assets/image (28).png>)
+![](<../../.gitbook/assets/image (48).png>)

@@ -2,7 +2,7 @@
 
 **Function Structure**
 
-![Example](<../../../.gitbook/assets/image (154).png>)
+![Example](<../../../.gitbook/assets/image (176).png>)
 
 * `public` -> visibility declaration&#x20;
 * `view` -> Indicates function behavior

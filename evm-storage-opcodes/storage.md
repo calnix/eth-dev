@@ -2,7 +2,7 @@
 
 Storage is setup based on 32 byte words, variables that are smaller than 32 bytes will be stored in the same word.
 
-<figure><img src="../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (221).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Other links:
@@ -49,5 +49,5 @@ For example, declaring your storage variables in the order of `uint128, uint128,
 * If allowed by the above rules, state variables from different contracts do share the same storage slot.
 * [https://docs.soliditylang.org/en/latest/internals/layout\_in\_storage.html](https://docs.soliditylang.org/en/latest/internals/layout\_in\_storage.html)
 
-<figure><img src="../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
 

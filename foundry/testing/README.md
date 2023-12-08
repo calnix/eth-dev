@@ -81,7 +81,7 @@ contract SimpleNameRegisterTest is DSTest {
 * import the contract to be tested  (import 'src/SimpleNameRegister.sol';)
 * deploy it via factory pattern&#x20;
 
-![factory pattern](<../../.gitbook/assets/image (158).png>)
+![factory pattern](<../../.gitbook/assets/image (180).png>)
 
 #### function setUp()
 
@@ -100,7 +100,7 @@ Each test is run as independent cases -> changes made in a prior test function w
 * The first function testRegisterDepends() registers ownership of name "what".
 * Then we call testRelinquishDepends() to check if we can relinquish ownership.
 
-![](<../../.gitbook/assets/image (212).png>)
+![](<../../.gitbook/assets/image (93).png>)
 
 testRelinquishDepends() fails, indicating that the effects from testRegisterDepends() do not spill into testRelinquishDepends().
 
@@ -124,7 +124,7 @@ To execute a cheatcode function, we need to interface with this contract from ou
 2. declare interface object as state variable
 3. assignment of state variable: pass the cheatcode contract address into the interface object
 
-![](<../../.gitbook/assets/image (104).png>)
+![](<../../.gitbook/assets/image (240).png>)
 
 {% hint style="info" %}
 If you are using `ds-test`, then this address is assigned in a constant named `HEVM_ADDRESS`. No need to remember the full address.
@@ -199,13 +199,13 @@ contract SimpleNameRegisterTest is DSTest {
 
 #### **startPrank**
 
-![startPrank](<../../.gitbook/assets/image (245).png>)
+![startPrank](<../../.gitbook/assets/image (267).png>)
 
 Sets `msg.sender` **for all subsequent calls** until [`stopPrank`](https://book.getfoundry.sh/cheatcodes/stop-prank.html) is called.
 
 **stopPrank**
 
-![stopPrank](<../../.gitbook/assets/image (138).png>)
+![stopPrank](<../../.gitbook/assets/image (235).png>)
 
 Stops [`startPrank`](https://book.getfoundry.sh/cheatcodes/start-prank.html), resetting `msg.sender` and `tx.origin` to the values before `startPrank` was called**.**
 

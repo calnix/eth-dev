@@ -8,7 +8,7 @@ The runtime bytecode created from Solidity contracts is a representation of the 
 
 For example Storage.sol: contract has 2 functions, store(uint256) and retrieve.
 
-<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
 
 Below is the compiled runtime bytecode of the entire contract:
 
@@ -71,7 +71,7 @@ When we call a contract function we include some calldata that specifies the fun
 
 calldata → function signature + any required parameters
 
-<figure><img src="../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
 * Here we are making a contract call to the store function with argument 10.
 * Use `abi.encodeWithSignature()` to get the calldata in the desired format.
@@ -107,7 +107,7 @@ If we take the function signature 6057361d and refer back to the opcode section,
 
 EVM is a stack-based machine, and thus performs all computations in a data area called the stack. All in-memory values are also stored in the stack.
 
-<figure><img src="../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
 Stack is LIFO: last-in, first-out.
 
@@ -122,7 +122,7 @@ Stack is LIFO: last-in, first-out.
 * stack\[1] is the value one below the top of the stack.
 * 1 word is 256 bits or 32 bytes.
 
-<figure><img src="../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
 
 **PUSH1 0x80:**
 
@@ -148,7 +148,7 @@ Contract memory is a simple byte array, where data can be stored in 32 bytes (25
 
 source: [https://takenobu-hs.github.io/downloads/ethereum\_evm\_illustrated.pdf](https://takenobu-hs.github.io/downloads/ethereum\_evm\_illustrated.pdf)
 
-<figure><img src="../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
 
 This functionality is determined by the 3 opcodes that operate on memory.
 
@@ -169,9 +169,9 @@ PUSH1 0x00  // == 0 (in base 10)
 MSTORE
 ```
 
-<figure><img src="../.gitbook/assets/image (141).png" alt=""><figcaption><p>before MSTORE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (163).png" alt=""><figcaption><p>before MSTORE</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (201).png" alt=""><figcaption><p>after MSTORE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (124).png" alt=""><figcaption><p>after MSTORE</p></figcaption></figure>
 
 Now memory has been filled from index 0 to 31 (32 bytes occupied). Next:
 
@@ -182,9 +182,9 @@ PUSH1 0x20   // == 32 (in base 10)
 MSTORE8
 ```
 
-<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption><p>before MSTORE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption><p>before MSTORE</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (171).png" alt=""><figcaption><p>after MSTORE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (193).png" alt=""><figcaption><p>after MSTORE</p></figcaption></figure>
 
 Since we only want to store 1 byte (0x22), we see 22 appended to memory, from index 32 to 33. However, padding of 0s are added to occupy the full 32 bytes (256 bits).
 
@@ -206,7 +206,7 @@ PUSH1 0x21
 MSTORE8
 ```
 
-<figure><img src="../.gitbook/assets/image (210).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 On adding another singe byte to memory, it just overwrites the padded zeroes.
 
@@ -230,7 +230,7 @@ PUSH1 0x21
 MLOAD
 ```
 
-<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
 
 ### Remember Memory is a Byte Array
 
@@ -291,7 +291,7 @@ We can see that 0x40 is the predefined location by solidity for the free memory 
 
 ### Example: Memory in a Real Contract
 
-<figure><img src="../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
 
 * single function that defines two arrays of lengths 5 & 2 and then assigns b\[0] a value of 1.
 * [evm playground](https://rb.gy/amswxm) for MemoryLane.sol
@@ -308,9 +308,9 @@ We can see that 0x40 is the predefined location by solidity for the free memory 
          1. pops the first item off the stack `0x40` to determine **where** to write to in memory
          2. the second value `0x80` as **what** to write
 
-<figure><img src="../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 * Stack is empty, but we have populated some memory.
 * This memory representation is in hexadecimal where each character represents 4 bits.

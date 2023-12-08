@@ -25,11 +25,11 @@ That is because **`balanceOf`** is **external**, to stop developers using subopt
 
 * since the contract **inherits** ERC20, **`balanceOf`** is native to itself; contract cannot call its own external function,
 
-![ERC20: balanceOf()](<../../.gitbook/assets/image (321).png>)
+![ERC20: balanceOf()](<../../.gitbook/assets/image (343).png>)
 
 ### Solution:
 
 You should access the `_balanceOf` mapping instead. It is `internal`
 
-![ERC20.sol](<../../.gitbook/assets/image (318).png>)
+![ERC20.sol](<../../.gitbook/assets/image (340).png>)
 

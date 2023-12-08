@@ -10,7 +10,7 @@ will return full details of each network
 
 ### Under Ethereum category
 
-![](<../../.gitbook/assets/image (243).png>)
+![](<../../.gitbook/assets/image (265).png>)
 
 * **ganache-local is our persistent mock network**
 * requires that ganacheUI is running, so that brownie will latch onto it automatically to deploy required mock contracts.
@@ -26,7 +26,7 @@ will return full details of each network
 
 ### Development:
 
-![](<../../.gitbook/assets/image (101).png>)
+![](<../../.gitbook/assets/image (237).png>)
 
 #### mainnet-fork-dev
 

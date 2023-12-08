@@ -18,7 +18,7 @@ Bytes for arbitrary length raw data.
 From a reference perspective, we are going to treat string as a reference type. &#x20;
 {% endhint %}
 
-![](<../../../.gitbook/assets/image (269).png>)
+![](<../../../.gitbook/assets/image (293).png>)
 
 ### Integers: (u)int
 

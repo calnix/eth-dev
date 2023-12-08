@@ -6,7 +6,7 @@
 * `msg.sig` — The first four bytes of the calldata for a function that specifies the function to be called (i.e., function selector)
 * `msg.value` — The amount of wei sent with a message to a contract (wei is a denomination of ETH)
 
-<figure><img src="../../.gitbook/assets/image (285).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (309).png" alt=""><figcaption></figcaption></figure>
 
 ### msg.sender vs tx.origin
 
@@ -17,7 +17,7 @@ There are two types of accounts in the Ethereum Chain
 
 Both accounts have addresses.
 
-<figure><img src="../../.gitbook/assets/image (287).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (313).png" alt=""><figcaption></figcaption></figure>
 
 \
 

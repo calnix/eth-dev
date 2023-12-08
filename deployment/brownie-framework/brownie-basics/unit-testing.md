@@ -29,7 +29,7 @@ def test_deploy():
 
 To run this test, input: `brownie test` in terminal:
 
-![](<../../../.gitbook/assets/image (125).png>)
+![](<../../../.gitbook/assets/image (254).png>)
 
 If we get a green dot at the end like above, all tests were successful.&#x20;
 
@@ -81,7 +81,7 @@ To get into interactive mode:
 
 when a test fails, or an error is encountered, terminal will convert to an interactive python shell:
 
-![](<../../../.gitbook/assets/image (284).png>)
+![](<../../../.gitbook/assets/image (308).png>)
 
 we can observe the values of variables by typing them in and their values will be returned.
 
@@ -132,7 +132,7 @@ def test_OwnerWithdraw():
 
 You would expect a revert to be thrown, like below, reflecting that an exception had occurred:
 
-![exception thrown](<../../../.gitbook/assets/image (273).png>)
+![exception thrown](<../../../.gitbook/assets/image (297).png>)
 
 ### How can we conduct a negative test properly?
 

@@ -2,7 +2,7 @@
 
 ### balanceOf()
 
-![](<../../.gitbook/assets/image (122).png>)
+![](<../../.gitbook/assets/image (226).png>)
 
 * Allows you to check the token balance of an address. Returns token balance as uint.
 * Public function that anyone can call.
@@ -23,7 +23,7 @@ We will need to understand this function well, before we can move to appreciatin
 In a nutshell, \_transfer() updates both the token balance states of `from` and `to` , as provided. It is called on by both transfer() and transferFrom() -- which are commonly used in other Smart Contracts.\
 
 
-![](<../../.gitbook/assets/image (159).png>)
+![](<../../.gitbook/assets/image (181).png>)
 
 Both `_beforeTokenTransfer` and `_afterTokenTransfer` are hooks  — empty function shells where we can use to inject our own custom functionality; without modifying \_transfer() as it has been securely implemented.&#x20;
 
@@ -45,17 +45,17 @@ If you are working on Solidity v0.8.0 or greater, and you are able to determine 
 
 ## \_mint()
 
-![](<../../.gitbook/assets/image (153).png>)
+![](<../../.gitbook/assets/image (175).png>)
 
 * \_beforeTokenTransfer() and \_afterTokenTransfer are hooks - empty functions for customization.&#x20;
 * **internal** modifier means that the function can only be called within the contract itself and any derived contracts.&#x20;
 * In this form, anyone can call \_mint, which is not ideal. A typical implementation would be as follows, where the **onlyOwner modifier** is inherited from **Ownable.sol**
 
-![onlyOwner can mint](<../../.gitbook/assets/image (157).png>)
+![onlyOwner can mint](<../../.gitbook/assets/image (179).png>)
 
 ## \_burn()
 
-![](<../../.gitbook/assets/image (69).png>)
+![](<../../.gitbook/assets/image (148).png>)
 
 1. First is a sanity check, we obioculy cannot burn from a 0 address.&#x20;
 2. \_beforeTokenTransfer is a hook, as is \_afterTokenTransfer&#x20;
@@ -69,7 +69,7 @@ Similar to \_mint, \_burn in this form would be callable by anyone, hence onlyOw
 
 ## \_spendAllowance()
 
-![](<../../.gitbook/assets/image (20).png>)
+![](<../../.gitbook/assets/image (40).png>)
 
 * Stores current allowance into `currentAllowance` variable
 * If statement checks if `currentAllowance` is set to the maximum possible figure, else it ensures that `currentAllowance` is more than equals to the amount.

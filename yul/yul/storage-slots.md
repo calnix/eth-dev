@@ -77,7 +77,7 @@ contract StorageBasics {
 * both functions will return the value of 1 -> a & b are both stored in storage slot 1
 *   `getVarYul(1)`: the value of a & b are both returned together in a single hexadecimal numbera&#x20;
 
-    <figure><img src="../../.gitbook/assets/image (322).png" alt=""><figcaption><p>a at the end, b at the middle</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (344).png" alt=""><figcaption><p>a at the end, b at the middle</p></figcaption></figure>
 
 ### How do we load their values if there are in the same slot
 
@@ -114,7 +114,7 @@ contract StoragePart1 {
 * offset is 28: tells us exactly where to look for to find the variable
   * you look 28 bytes to the left, starting from the end, you will find the variable.
 
-<figure><img src="../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
 **slot 0 value:** \
 `0x00010008`<mark style="color:red;">`00000000000000000000000600000000000000000000000000000004`</mark>

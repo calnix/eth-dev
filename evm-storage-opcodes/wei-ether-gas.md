@@ -5,7 +5,7 @@
 * 1 Eth = 10\*\*18 Wei&#x20;
 * 1 Eth = 10\*\*9 gwei (giga-wei)
 
-<figure><img src="../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 **Each operation in a contract costs gas: Gas Costs from Yellow Paper**
 
@@ -44,7 +44,7 @@ It is not easy to calculate gas costs for certain functions/operations ahead of 
 
 **Example**
 
-<figure><img src="../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
 
 * We need to spend 14 gas, and are willing to spend 20 gas. Transaction will be successfully processed.
 * Since we decided to pay 300 wei/gas (gasPrice), our total cost comes to 300 \* 14 = 4,200 wei
@@ -63,7 +63,7 @@ Bob creates the transaction with gasLimit = 100 and gasPrice = 2. Unfortunately,
 
 When it is time to pick a transaction to include in the next block, the miner node is likely to choose the transaction that will reward him more fees. In our example, Bob has set a gasPrice twice as high as John’s gasPrice. Since both transactions have the same gas cost, the miner will receive twice as much Wei as a reward if it chooses Bob’s transaction.
 
-<figure><img src="../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 This mechanism of charging the transaction sender and rewarding the miner creates a self-regulated economy. The senders are always trying to minimise fees and the miners always trying to maximize their reward. When sending a transaction, you can set a higher gasPrice to make mining this transaction more interesting to miners, resulting in the transaction being mined faster.
 

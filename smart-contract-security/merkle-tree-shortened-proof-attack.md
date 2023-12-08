@@ -10,7 +10,7 @@ The _second preimage attack_ in Merkle trees can happen when an intermediate nod
 
 ### Valid example
 
-<figure><img src="../.gitbook/assets/image (348).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (370).png" alt=""><figcaption></figcaption></figure>
 
 * we want to create a merkle proof for the leaf ℓ₂, in yellow text.
 * we will need all the hashes in green.
@@ -30,7 +30,7 @@ What if the attacker provides an intermediate node as a leaf, along with the sho
 
 Essentially, if a merkle proof is valid, then a shortened version of it is also valid if we pass the first value in the original proof as a leaf.
 
-<figure><img src="../.gitbook/assets/image (349).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (371).png" alt=""><figcaption></figcaption></figure>
 
 * attacker provides a as the leaf, and the green hashes as the merkle proof
 * the merkle can be correctly generated from this truncated offering, and therefore verification will pass
@@ -57,7 +57,7 @@ Instead of using a different hash function (such as via a [precompile](https://w
 
 We've used green underlines to show where the hash is taken twice to construct the leaf node from the underlying data.
 
-<figure><img src="../.gitbook/assets/image (351).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (373).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The attack is easy to defend against — simply do not allow non-leaf values to be interpreted as leafs.

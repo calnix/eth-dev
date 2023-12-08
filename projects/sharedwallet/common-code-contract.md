@@ -49,4 +49,4 @@ Allowance inherits from Ownable, and Shared Wallet inherits from Allowance (+ Ow
 
 When deploying, you would deploy the SharedWallet contract.
 
-![](<../../.gitbook/assets/image (256).png>)
+![](<../../.gitbook/assets/image (278).png>)

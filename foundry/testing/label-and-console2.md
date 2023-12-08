@@ -31,7 +31,7 @@ function testVaultHasDAI() public {
 }
 ```
 
-![label and console2.log](<../../.gitbook/assets/image (37).png>)
+![label and console2.log](<../../.gitbook/assets/image (57).png>)
 
 {% hint style="info" %}
 logging doesnt get reflected in fuzzing tests.

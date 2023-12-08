@@ -8,7 +8,7 @@ description: >-
 
 
 
-![](<../.gitbook/assets/image (324).png>)
+![](<../.gitbook/assets/image (346).png>)
 
 * **Address**: address of contract that emitted the event
 * **Topics**: indexed parameters of events

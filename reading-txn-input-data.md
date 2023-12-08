@@ -2,7 +2,7 @@
 
 Any transaction with data payload is meant to be addressed to a smart contract. These types of transactions usually invoke a function on smart contract.
 
-![](<.gitbook/assets/image (346).png>)
+![](<.gitbook/assets/image (368).png>)
 
 The data payload is the hex data we see here. It is bytecode that the EVM will understand and execute. Let's breakdown the transaction data:
 
@@ -17,7 +17,7 @@ e2bbb158
 ```
 {% endcode %}
 
-<figure><img src=".gitbook/assets/image (347).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (369).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 32 bytes == uint256

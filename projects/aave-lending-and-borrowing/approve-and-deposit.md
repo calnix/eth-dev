@@ -22,7 +22,7 @@ Since we only require a select few functions: deposit, withdraw and so forth, we
 
 * create ILendingPoolAddressesProvider.sol in interfaces folder.
 * either create your own interface by defining the functions (refer to etherscan or github)&#x20;
-* ![](<../../.gitbook/assets/image (280).png>)
+* ![](<../../.gitbook/assets/image (304).png>)
 * or, just copy aave's interfaces
 
 #### Address
@@ -33,7 +33,7 @@ Addresses Provider -> Deployed Contracts Section
 [https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts](https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts)
 {% endhint %}
 
-![](<../../.gitbook/assets/image (254).png>)
+![](<../../.gitbook/assets/image (276).png>)
 
 Add these to brownie-config.yaml
 
@@ -134,7 +134,7 @@ def get_lendingpool():
     return lending_pool
 ```
 
-![](<../../.gitbook/assets/image (239).png>)
+![](<../../.gitbook/assets/image (261).png>)
 {% endtab %}
 
 {% tab title="helpful_scripts.py" %}
@@ -206,7 +206,7 @@ wallets:
 
 Before we can deposit we must approve Aave's contract to use our WETH tokens. This is done with the approve function.
 
-![ERC20.sol](<../../.gitbook/assets/image (323).png>)
+![ERC20.sol](<../../.gitbook/assets/image (345).png>)
 
 {% hint style="info" %}
 Because DApps (decentralized applications) use smart contracts to execute transactions, you must give permission for the smart contract to transfer up to a certain amount of your token (allowance).

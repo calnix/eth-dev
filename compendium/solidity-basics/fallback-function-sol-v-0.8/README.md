@@ -25,7 +25,7 @@ fallback() external payable {
 * If there is no `receive` function, then the `fallback` is executed.&#x20;
 * If there is no `receive` or `fallback`, then the transaction reverts.
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
 * `receive` is for receiving ether without calling data.&#x20;
 

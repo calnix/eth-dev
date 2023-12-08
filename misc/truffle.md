@@ -7,7 +7,7 @@ description: >-
 
 Truffle is a node package. So you need node and npm installed first.
 
-![](<../.gitbook/assets/image (247).png>)
+![](<../.gitbook/assets/image (269).png>)
 
 To install a specific version -> ...truffle@\<version>
 
@@ -25,4 +25,4 @@ You can see what the box contains and its github link:\
 
 ### vs code plugins
 
-![](<../.gitbook/assets/image (249).png>)
+![](<../.gitbook/assets/image (271).png>)

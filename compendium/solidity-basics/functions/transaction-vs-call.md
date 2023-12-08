@@ -5,7 +5,7 @@ There are two ways we can invoke functions.
 1. Call
 2. Send a transaction (data modification)
 
-![](<../../../.gitbook/assets/image (51).png>)
+![](<../../../.gitbook/assets/image (71).png>)
 
 {% hint style="info" %}
 A transaction is necessary, if a value in a Smart Contract needs to be updated (state change).&#x20;
@@ -15,7 +15,7 @@ A call is done, if a value is read.&#x20;
 Transactions cost Ether (gas), need to be mined and therefore take a while until the value is reflected, which you will see later. Calls are virtually free and instant.
 {% endhint %}
 
-![transaction followed by call](<../../../.gitbook/assets/image (190).png>)
+![transaction followed by call](<../../../.gitbook/assets/image (214).png>)
 
 ### Sending a transaction to a function
 

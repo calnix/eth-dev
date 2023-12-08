@@ -30,7 +30,7 @@ compiler:
 
 * dependencies section tells brownie what to download from where.
 
-![](<../../../.gitbook/assets/image (132).png>)
+![](<../../../.gitbook/assets/image (258).png>)
 
 * compiler section tells compiler that @chainlink is to be remapped to a specific dependency that was downloaded.&#x20;
 * will be downloaded in to `build/contracts/dependencies` as a json

@@ -342,12 +342,12 @@ s[0].push();    //empty uint = 0
 s[0].push(6);    
 ```
 
-<figure><img src="../../../.gitbook/assets/image (352).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (374).png" alt=""><figcaption></figcaption></figure>
 
 * s points to another array, s\[0]
 * s\[0] points to the series of elements, s\[0] = \[4,0,6]
 
-<figure><img src="../../../.gitbook/assets/image (357).png" alt=""><figcaption><p>example: if s[1] =5 and s[2] = 1</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (379).png" alt=""><figcaption><p>example: if s[1] =5 and s[2] = 1</p></figcaption></figure>
 
 * s\[1] pointer would be stored beside s\[0], and so forth
 
@@ -437,7 +437,7 @@ contract Storage {
 3. pop s\[0]
 4. push some hex value into the same storage location&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (358).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (380).png" alt=""><figcaption></figcaption></figure>
 
 ```solidity
 contract Storage {
@@ -481,4 +481,4 @@ contract Storage {
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (359).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (381).png" alt=""><figcaption></figcaption></figure>

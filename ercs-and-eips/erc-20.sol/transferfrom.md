@@ -4,7 +4,7 @@
 * Returns a boolean value indicating whether the operation succeeded.
 * Emits a [`Transfer`](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20#IERC20-Transfer-address-address-uint256-) event.
 
-![](<../../.gitbook/assets/image (270).png>)
+![](<../../.gitbook/assets/image (294).png>)
 
 If A has an allowance granted by B with yourToken.sol, A has the liberty to transfer the tokens to destination address of choice. A is not limited to transferring its allowance only to its' own address.
 
@@ -19,7 +19,7 @@ If A has an allowance granted by B with yourToken.sol, A has the liberty to tran
 
 \---
 
-![](<../../.gitbook/assets/image (121).png>)
+![](<../../.gitbook/assets/image (225).png>)
 
 * userA calls sellTokens() - function of Service contract
   * within the scope of sellTokens(), msg.sender = userA

@@ -47,7 +47,7 @@ contract Memory {
 
 memPointer emits 0x80 first, then 0xc0
 
-<figure><img src="../../.gitbook/assets/image (227).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
 
 64 bytes, corresponding to the struct that consists of two 32 bytes (x & y in struct)
 

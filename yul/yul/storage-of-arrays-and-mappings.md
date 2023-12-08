@@ -141,7 +141,7 @@ contract StorageComplex2 {
 * since uint8 is 1 bytes, all 3 elements are packed into the first storage slot at location
 * all elements stored at index 0, nothing at index 1.
 
-<figure><img src="../../.gitbook/assets/image (230).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
 ### Mappings
 

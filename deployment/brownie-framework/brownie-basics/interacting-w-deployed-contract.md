@@ -34,7 +34,7 @@ def main():
 
 We can run the above script with: `brownie run scripts/read_value.py --network rinkeby`
 
-![](<../../../.gitbook/assets/image (191).png>)
+![](<../../../.gitbook/assets/image (215).png>)
 
 * read current value of favNum -> returns 3  (call)
 * update favNum to 5&#x20;

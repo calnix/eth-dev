@@ -42,7 +42,7 @@ function registerName(string memory _name) public {
 
 ### Etherscan
 
-![](<../../.gitbook/assets/image (324).png>)
+![](<../../.gitbook/assets/image (346).png>)
 
 * **Address**: address of contract that emitted the event
 * **Topics**: indexed parameters of events
@@ -50,7 +50,7 @@ function registerName(string memory _name) public {
   * have to decode using the abi of the contract
   * if contract is verified on etherscan, can view in decoded mode 'dec'
 
-![https://kovan.etherscan.io/address/0x136607f1f09312d041b2e60396105f58bd063d66#events](<../../.gitbook/assets/image (206).png>)
+![https://kovan.etherscan.io/address/0x136607f1f09312d041b2e60396105f58bd063d66#events](<../../.gitbook/assets/image (87).png>)
 
 **topic\[0]** always refers to the hash of the event itself `keccak256(NameRegistered(<address>, <name>))`
 

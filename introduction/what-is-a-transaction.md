@@ -11,7 +11,7 @@
 
 ### Transaction
 
-<figure><img src="../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 * nonce -> (index) if this is the 101st transaction sent by sender, transaction will have nonce of 101.&#x20;
   * to avoid prevent replay attacks.
@@ -27,19 +27,19 @@ For a transaction signature to be created, access to the account and its private
 
 **Private Key: 32 bytes (64 hex characters)**
 
-<figure><img src="../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (318).png" alt=""><figcaption></figcaption></figure>
 
 **Public Key**
 
 The public key is generated from a private key, using ECDSA. This is a one-way function, the only way is to brute-force it.
 
-<figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
 
 **Ethereum Account (Wallet Address)**
 
 An Ethereum account is the Keccak Hash of the last 20 bytes (40 hex char) of the public key.
 
-<figure><img src="../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
 > _**Can go from Private -> Public -> Account. No reverse.**_
 
@@ -49,7 +49,7 @@ The transaction gets signed with the private key, creating additional fields of 
 
 _You cannot reverse engineer the private key from the signature._
 
-<figure><img src="../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
 
 With the r & s, you can run them through an ECRECOVER function, and it will output the Public Key and Wallet Address (Eth account).
 

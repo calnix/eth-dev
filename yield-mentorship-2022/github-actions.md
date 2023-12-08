@@ -6,7 +6,7 @@
 
 A common event that occurs on a repo, is when someone pushes code.
 
-![test.yml](<../.gitbook/assets/image (9) (1).png>)
+![test.yml](<../.gitbook/assets/image (29).png>)
 
 * on: push
   * We specify the workflow to trigger when someone pushes new code.
@@ -15,7 +15,7 @@ A common event that occurs on a repo, is when someone pushes code.
 
 ## Jobs&#x20;
 
-![](<../.gitbook/assets/image (170).png>)
+![](<../.gitbook/assets/image (192).png>)
 
 * In this workflow we have a single named, **super-lint**
 * It specifies multiple **steps** and **actions**

@@ -9,7 +9,7 @@ description: >-
 
 ### \_balances mapping
 
-![](<../../.gitbook/assets/image (33).png>)
+![](<../../.gitbook/assets/image (53).png>)
 
 * tracks token holdings of each address
 * **private:** it can **only** be accessed within this contract.&#x20;
@@ -17,7 +17,7 @@ description: >-
 
 ### \_allowances mapping
 
-![](<../../.gitbook/assets/image (166).png>)
+![](<../../.gitbook/assets/image (188).png>)
 
 \--> mapping(address => \[address, uint])
 

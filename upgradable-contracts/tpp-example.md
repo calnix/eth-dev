@@ -8,7 +8,7 @@ description: EIP-1538
 
 We can use OpenZepplin's [TransparentUpgradeableProxy](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/proxy/transparent/TransparentUpgradeableProxy.sol). The file contains both an interface and the proxy contract.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 The explanation states that we are to use the provided interface to interact with the proxy contract, as the ABI procuded by the compiler will be missing some functions due to an internal dispatch mechanism.&#x20;
 
@@ -16,7 +16,7 @@ The explanation states that we are to use the provided interface to interact wit
 
 The mechanism is essentially how the fallback function is crafted.&#x20;
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 If the function signature provided in the call matches one of the interface functions, the call is routed to the corresponding internal function.&#x20;
 

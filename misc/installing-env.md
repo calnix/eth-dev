@@ -20,4 +20,4 @@ In computer programming, **boilerplate code** or **boilerplate** refers to secti
 For instance, a lawyer may give you a five page contract to sign, but most of the contract is boilerplate — meaning it’s the same for everyone who gets that contract, with only a few lines changed here and there.
 {% endhint %}
 
-![](<../.gitbook/assets/image (333).png>)&#x20;
+![](<../.gitbook/assets/image (355).png>)&#x20;

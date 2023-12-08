@@ -21,7 +21,7 @@ You can run secondary scripts and interact with deployed contracts -> fund\_with
 
 This will add ganache-local to the Ethereum category:&#x20;
 
-![](<../../../.gitbook/assets/image (103).png>)
+![](<../../../.gitbook/assets/image (239).png>)
 
 This requires that ganacheUI is running, so that brownie will latch onto it automatically to deploy required mock contracts.
 
@@ -46,27 +46,27 @@ To remove past deployments:
 
 We need to update deploy.py since it identifies ganache-local as a live chain, and does not deploy mocks.
 
-![](<../../../.gitbook/assets/image (288).png>)
+![](<../../../.gitbook/assets/image (314).png>)
 
 The solution is to extend our definition of local blockchains by introducing variable into helpful\_scripts.py:
 
 `LOCAL_BLOCKCHAIN_ENV = ["developments","ganache-local"]`
 
-![](<../../../.gitbook/assets/image (251).png>)
+![](<../../../.gitbook/assets/image (273).png>)
 
 Additionally, we will change get_accounts(),_ so that it uses a dummy account for _local\_blockchain_\_env
 
-![](<../../../.gitbook/assets/image (291).png>)
+![](<../../../.gitbook/assets/image (317).png>)
 
 import Local\__blockchain\_env into deploy.py and modif_y the if statement so it considers both development chains as well as the new ganache-local we created.&#x20;
 
-![](<../../../.gitbook/assets/image (73).png>)
+![](<../../../.gitbook/assets/image (153).png>)
 
 Finally we need to update our config file so that brownie knows that it should not verify on this chain.
 
 Now on running deploy.py, we can see that the transactions are reflected in our ganache UI:
 
-![](<../../../.gitbook/assets/image (248).png>)
+![](<../../../.gitbook/assets/image (270).png>)
 
 ## Creating Mock Contracts
 
@@ -92,9 +92,9 @@ Unlike its live deployment version, mock takes 2 parameters into its constructor
 * initial Price (we set at 2000)
   * 200000000000 (2000 \*10\*\*8)
 
-![](<../../../.gitbook/assets/image (109).png>)
+![](<../../../.gitbook/assets/image (245).png>)
 
-![](<../../../.gitbook/assets/image (266).png>)
+![](<../../../.gitbook/assets/image (290).png>)
 
 ### Parameterize our contract address references
 
@@ -104,29 +104,29 @@ First we need to parameterize the hard-coded price-feed contract addresses in Fu
 * initiate it with the constructor&#x20;
 * use variable in getPrice functions
 
-![FundMe.sol](<../../../.gitbook/assets/image (262).png>)
+![FundMe.sol](<../../../.gitbook/assets/image (286).png>)
 
 ### Parameterize deployment function
 
 now we need to pass the address variable as a constructor argument on deployment of FundMe.
 
-![](<../../../.gitbook/assets/image (276).png>)
+![](<../../../.gitbook/assets/image (300).png>)
 
 in brownie-config.yaml
 
-![](<../../../.gitbook/assets/image (279).png>)
+![](<../../../.gitbook/assets/image (303).png>)
 
 We cannot pre-store the address for the development chain mock, since it is different everytime. Instead we will use an if-else logic, to identify the netowrk we are on, and pass the correct address into price\__feed_\_address.
 
-![instead of 18, it should be 8. so it resembles the aggregator price feed which returns 8 dp.](<../../../.gitbook/assets/image (286).png>)
+![instead of 18, it should be 8. so it resembles the aggregator price feed which returns 8 dp.](<../../../.gitbook/assets/image (312).png>)
 
 ### Parameterize verify&#x20;
 
-![brownie-config.yaml](<../../../.gitbook/assets/image (111).png>)
+![brownie-config.yaml](<../../../.gitbook/assets/image (247).png>)
 
 modify .deploy:
 
-![](<../../../.gitbook/assets/image (317).png>)
+![](<../../../.gitbook/assets/image (339).png>)
 
 can use \["verify"], but if you forget to add it in it will throw index errors.
 
@@ -146,7 +146,7 @@ But brownie will not remember this deployment, as it is treated as a development
 
 > There will be nothing saved down in the deployments folder.
 
-![](<../../../.gitbook/assets/image (312).png>)
+![](<../../../.gitbook/assets/image (334).png>)
 
 The deployed contracts json is saved into deployments folder. There are two: fundme.sol and our mock aggregator.&#x20;
 

@@ -2,7 +2,7 @@
 
 ## How does upgradability work?
 
-<figure><img src="../.gitbook/assets/image (337).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (359).png" alt=""><figcaption></figcaption></figure>
 
 * A proxy contract exists between the main implementation contract and the user.&#x20;
 * The proxy contract serves as the entrypoint of interaction for users; it forwards transactions to the current implementation contract that contains the logic.
@@ -37,11 +37,11 @@ Only borrow the logic from implementation contract and execute it in proxy's con
 
 One cannot just go around and simply declare `address implementation` in a proxy contract because that would cause storage collision with the storage of implementation which may have multiple variables in it at overlapping storage slots.
 
-<figure><img src="../.gitbook/assets/image (338).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (360).png" alt=""><figcaption></figcaption></figure>
 
 Solution is to write the `implementation` address into a pseudo-random slot. That slot position should be sufficiently random so that having a variable in implementation contract at same slot is negligible.
 
-<figure><img src="../.gitbook/assets/image (339).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (361).png" alt=""><figcaption></figcaption></figure>
 
 According to [EIP-1967](https://eips.ethereum.org/EIPS/eip-1967) one such slot could be calculated as:
 
@@ -63,7 +63,7 @@ When upgrading to a new implementation, if a new state variable is added to impl
 
 * this can be done via inheritance
 
-<figure><img src="../.gitbook/assets/image (340).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (362).png" alt=""><figcaption></figcaption></figure>
 
 ## Initializing constructor code
 
@@ -71,7 +71,7 @@ Any initialization logic should run inside the proxy, as it preserves state. So 
 
 To that end, we have an `initialize` function on the implementation that achieves the same end result as the constructor would, but is delegateCalled by the proxy.
 
-<figure><img src="../.gitbook/assets/image (341).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (363).png" alt=""><figcaption></figcaption></figure>
 
 This is just like a normal function but MUST be ensured that it is called only once; hence the `initializer` modifier.&#x20;
 
@@ -96,7 +96,7 @@ Transparent proxy pattern includes the upgrade functionality within the proxy co
 * If the caller is the admin of the proxy, the proxy will not delegate any calls,&#x20;
 * If the caller is any other address, the proxy will always delegate the call, even if the func sig matches one of the proxy’s own functions.&#x20;
 
-<figure><img src="../.gitbook/assets/image (342).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (364).png" alt=""><figcaption></figcaption></figure>
 
 This pattern is very widely used for its upgradeability and protections against certain function and storage collision vulnerabilities.
 
@@ -159,7 +159,7 @@ The UUPS pattern was first documented in [EIP1822](https://eips.ethereum.org/EIP
 * Because the upgrade mechanism is in the implementation, later versions can remove related logic to disable future upgrades.&#x20;
 * Implementation address - Located in a unique storage slot in the proxy contract ([EIP-1967](https://proxies.yacademy.dev/pages/proxies-list/#eip-1967-upgradeable-proxy)).
 
-<figure><img src="../.gitbook/assets/image (343).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (365).png" alt=""><figcaption></figcaption></figure>
 
 The upgrade mechanism contains an additional check when upgrading that ensures the new implementation contract is upgradeable. The UUPS proxy contract usually incorporates [EIP-1967](https://proxies.yacademy.dev/pages/proxies-list/#eip-1967-upgradeable-proxy).
 
@@ -224,13 +224,13 @@ Note that since both proxies use the same storage slot for the implementation ad
 
 The Beacon proxy pattern allows multiple proxy contracts to share one logic implementation by referencing the beacon contract. The beacon contract provides the logic implementation contract address to calling proxies and only the beacon contract needs to be updated when upgrading with a new logic implementation address.
 
-<figure><img src="../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (366).png" alt=""><figcaption></figcaption></figure>
 
 ## Diamond Proxy
 
 Diamond Proxy allows us to delegate calls to more than one implementation contract, known as facets, similar to microservices. Function signatures are mapped to facets.
 
-<figure><img src="../.gitbook/assets/image (345).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (367).png" alt=""><figcaption></figcaption></figure>
 
 ```solidity
 mapping(bytes4 => address) facets;

@@ -41,7 +41,7 @@ contract SimpleMappingExample {
 }
 ```
 
-![](<../../.gitbook/assets/image (110).png>)         ![](<../../.gitbook/assets/image (7) (1).png>)
+![](<../../.gitbook/assets/image (246).png>)         ![](<../../.gitbook/assets/image (27).png>)
 
 1. On initialization, `myMapping[1]` will return the default bool value of false.&#x20;
 2. Then we call `setValue` setting -> `myMapping[1]` = true

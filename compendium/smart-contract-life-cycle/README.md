@@ -20,7 +20,7 @@ contract StartStopUpdateExample {
 }
 ```
 
-![](<../../.gitbook/assets/image (47).png>)
+![](<../../.gitbook/assets/image (67).png>)
 
 * with sendMoney() we can send the SC some ETH
 * with withdrawAllMoney(), **anyone** can input their address and withdraw all balances.
@@ -62,7 +62,7 @@ contract StartStopUpdateExample {
   * if true, balances transferred.
   * If require evaluates to false it will stop the transaction, roll-back any changes made so far and emit the error message as String.
 
-![](<../../.gitbook/assets/image (137).png>)
+![](<../../.gitbook/assets/image (234).png>)
 
 {% hint style="info" %}
 Note, the msg.sender would be different for the constructor and the withdraw as these are two different interactions with 2 different messages.&#x20;

@@ -17,4 +17,4 @@ contract SharedWallet is Allowance {
 }
 ```
 
-![](<../../.gitbook/assets/image (255).png>)
+![](<../../.gitbook/assets/image (277).png>)

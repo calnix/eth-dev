@@ -121,7 +121,7 @@ event MyEvent(uint _arg1, address indexed _arg2)
     }
 ```
 
-![https://kovan.etherscan.io/address/0x136607f1f09312d041b2e60396105f58bd063d66#events](<../.gitbook/assets/image (206).png>)
+![https://kovan.etherscan.io/address/0x136607f1f09312d041b2e60396105f58bd063d66#events](<../.gitbook/assets/image (87).png>)
 
 * `topic[0]` always refers to the hash of the hash of the event itself keccak-256(NameRegistered(\<address>, \<name>))
 
@@ -164,7 +164,7 @@ Events are used to inform the external user that something has happened, since w
 
 ### Events as Trigger
 
-![](<../.gitbook/assets/image (135).png>)
+![](<../.gitbook/assets/image (233).png>)
 
 When Alice withdraws 3 ETH from the 2/2 Multi-Sig wallet, an event will be emitted to inform Bob of this.
 

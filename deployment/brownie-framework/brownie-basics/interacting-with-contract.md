@@ -94,5 +94,5 @@ calling store requires a transaction and gas to be paid, so we need to define th
 
 txn.wait is important for "mining".
 
-![](<../../../.gitbook/assets/image (134).png>)
+![](<../../../.gitbook/assets/image (232).png>)
 

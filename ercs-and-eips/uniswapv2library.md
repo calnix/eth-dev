@@ -32,7 +32,7 @@ Regardless of scenario, token0 will be the smaller address:
 
 {% tabs %}
 {% tab title="First Tab" %}
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>first address always smallest</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption><p>first address always smallest</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Code" %}

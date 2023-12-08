@@ -1,6 +1,6 @@
 # Page 1
 
-<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
 * Seller creates a sell order -> sellOrder struct with relevant info (price, NFT addr)
 * sellOrder struct is hashed to get sellOrderDigest
@@ -14,12 +14,12 @@
 
 #### sellOrderDigest
 
-<figure><img src="../../../.gitbook/assets/image (213).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
 
 * sellOrderDigest is the keccak256 hash of all the MakerOrder properties set when creating an order and a constant value.
 * The constant value is the typehash
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 * `SELL_ORDER_TYPEHASH` -> keccak256 hash of the SellOrder struct and its fields
 * `typeHash` is to separate types -> collision resistance
@@ -32,9 +32,9 @@ Every hash function is NOT injective. Hashes map a large domain to a significant
 
 ### Buying
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
 * calculate the EIP721 digest of the sellOrder inputted
 * use ecrecover together with this digest and the v,r,s values to generate the signer address

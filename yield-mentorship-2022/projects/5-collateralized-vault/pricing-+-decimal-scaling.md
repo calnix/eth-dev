@@ -43,7 +43,7 @@ If you want to convert between different representations you have to multiply or
 **Normalize** the _**from\_token**_ by stripping it of its decimal places. \
 (because of the <mark style="color:red;background-color:yellow;">**solidity decimal scale up effect**</mark>)
 
-![](<../../../.gitbook/assets/image (95).png>)
+![](<../../../.gitbook/assets/image (146).png>)
 
 Then we scale up by the TokenB (to token) decimals
 
@@ -57,7 +57,7 @@ Then we scale up by the TokenB (to token) decimals
     valueA = (valueB / 10**6) * 10**18
 ```
 
-![](<../../../.gitbook/assets/image (28).png>)
+![](<../../../.gitbook/assets/image (48).png>)
 
 {% hint style="info" %}
 naturally division will lead to precision loss.
@@ -67,11 +67,11 @@ naturally division will lead to precision loss.
 
 #### getMaxDebt()  | <mark style="color:blue;">how much DAI for WETH?</mark>
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>USING WETH COLLATERAL TO BORROW DAI</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption><p>USING WETH COLLATERAL TO BORROW DAI</p></figcaption></figure>
 
 #### getMaxDebt()  | <mark style="color:blue;">how much USDC for WETH?</mark>
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 For two tokens with different decimals precision, the decimal precision of their price would match the token with the larger decimal precision\
@@ -89,6 +89,6 @@ TokenA /TokenB price is returned as 18 dp; else we would incorrectly truncate th
 
 <summary>Old illustration</summary>
 
-![](<../../../.gitbook/assets/image (63).png>)
+![](<../../../.gitbook/assets/image (131).png>)
 
 </details>

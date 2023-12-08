@@ -40,13 +40,13 @@ The Aave deposit function will handle all the necessary conversions from ETH. Ho
 
 Objective: Get WETH by depositing ETH \[call deposit function on WEth contract].
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (37).png>)
 
 * To interact with the contract, we need ABI + Address.&#x20;
 * For ABI, use interface, IWEth.sol, from https://github.com/PatrickAlphaC/aave\_brownie\_py\_freecode/tree/main/interfaces
 * create IWeth.sol in interfaces folder -> copy and paste github code into it.
 
-![](<../../.gitbook/assets/image (112).png>)
+![](<../../.gitbook/assets/image (248).png>)
 
 {% tabs %}
 {% tab title="get_weth().py" %}
@@ -136,10 +136,10 @@ def get_account(index=None,id=None):
 
 On running get\_weth.py successfully, you should see 0.1 WEth in your Metamask wallet.&#x20;
 
-![](<../../.gitbook/assets/image (283).png>)
+![](<../../.gitbook/assets/image (307).png>)
 
 {% hint style="info" %}
 If you want to convert Weth back to Eth, call the withdraw function. The function will return us the ETH we stored with the contract, on reclaiming the WETH.
 {% endhint %}
 
-![](<../../.gitbook/assets/image (297).png>)
+![](<../../.gitbook/assets/image (84).png>)

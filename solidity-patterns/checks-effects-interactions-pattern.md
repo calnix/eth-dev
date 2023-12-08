@@ -2,7 +2,7 @@
 
 ## Objective: Negate Reentrancy attacks
 
-![](<../.gitbook/assets/image (64).png>)
+![](<../.gitbook/assets/image (135).png>)
 
 ### Negative Example
 

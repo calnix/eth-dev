@@ -42,7 +42,7 @@ contract Animal {
 
 Before deployment, you have to provide the values for `feet` and `canSwim` &#x20;
 
-![](<../../../.gitbook/assets/image (246).png>)
+![](<../../../.gitbook/assets/image (268).png>)
 
 {% hint style="danger" %}
 Prior to version 0.4.22 of Solidity, constructors were defined as functions with the same name as the contract (_like in JAVA?)_. This syntax was deprecated and is not allowed anymore since version 0.5.0.&#x20;

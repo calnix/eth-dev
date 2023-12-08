@@ -30,7 +30,7 @@ abstract contract WitchV2StateZero is Test, TestConstants {
 * based on vm.mockCall()
 * Mocks a call to an address, returning specified calldata.
 
-![mockCall](<../.gitbook/assets/image (179).png>)
+![mockCall](<../.gitbook/assets/image (202).png>)
 
 #### Example:
 
@@ -55,7 +55,7 @@ function build(address owner, bytes12 vaultId, bytes6 seriesId, bytes6 ilkId)
 * mock `build` function in cauldron&#x20;
 * since mock is a library fn, it takes the function `build` as its first parameter:
 
-![matching mock fn signature](<../.gitbook/assets/image (31).png>)
+![matching mock fn signature](<../.gitbook/assets/image (51).png>)
 
 *   `mockCall` takes 3 parameters:
 
@@ -71,15 +71,15 @@ function build(address owner, bytes12 vaultId, bytes6 seriesId, bytes6 ilkId)
 
 ## Mocking a contract
 
-![](<../.gitbook/assets/image (320).png>)
+![](<../.gitbook/assets/image (342).png>)
 
 **Mocks.mock("Cauldron") matchs the fn signature:**
 
-![Mock.sol](<../.gitbook/assets/image (24).png>)
+![Mock.sol](<../.gitbook/assets/image (44).png>)
 
 * StrickMock()
 
-![](<../.gitbook/assets/image (308).png>)
+![](<../.gitbook/assets/image (330).png>)
 
 * a placeholder contract is deployed at an address and labelled as "Cauldron".
 * the deployed address is returned, which is subsequently passed into the interface ICauldron.
@@ -88,6 +88,6 @@ function build(address owner, bytes12 vaultId, bytes6 seriesId, bytes6 ilkId)
 
 * based on `expectCall()` from Vm.sol
 
-![](<../.gitbook/assets/image (155).png>)
+![](<../.gitbook/assets/image (177).png>)
 
 * test in general a particular path was hit in a smart contract that calls another contract

@@ -47,7 +47,7 @@ contract MyContract {
 
 * You can choose the version to be an exact version like "0.8.4", or you could add the "`^`" to specify all versions above greater or equal to 0.8.0, which means, it will download the latest 0.8.x version.
 
-<figure><img src="../.gitbook/assets/image (263).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (287).png" alt=""><figcaption></figcaption></figure>
 
 **Bytecode**&#x20;
 

@@ -23,7 +23,7 @@ The cost to this pattern is that every execution has a delegate call overhead.
 * Several clones can point to the same implementation contract. Clones cannot be upgraded.
 * The address of the implementation contract is stored in the bytecode. This saves gas compared to storage and prevents the clone from pointing to another implementation.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 EIP 1167 has nothing to do with upgradeability nor tries to replace it.
@@ -31,14 +31,14 @@ EIP 1167 has nothing to do with upgradeability nor tries to replace it.
 
 ### How does it look like?
 
-<figure><img src="../../.gitbook/assets/image (237).png" alt=""><figcaption><p>EVM bytecode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption><p>EVM bytecode</p></figcaption></figure>
 
 * The dummy address `0xbebebebebebebebebebebebebebebebebebebebe` is replaced with the implementation contract address.
 * bytecode is 55 bytes in size, or `0x37`
 
 #### Essentially, the minimal proxy contract looks like this in pseudocode:
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 ### Implementation in Solidity
 

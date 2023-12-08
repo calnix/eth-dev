@@ -7,7 +7,7 @@ function (<parameter types>) {public|private|internal|external}
 
 #### A function declarations only impose scope and do nothing for security
 
-![](<../../../.gitbook/assets/image (52).png>)
+![](<../../../.gitbook/assets/image (72).png>)
 
 #### Simply put:
 

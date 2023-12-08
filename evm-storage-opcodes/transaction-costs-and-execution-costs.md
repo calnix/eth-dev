@@ -11,6 +11,6 @@
 
 You can see the breakdown in the yellow paper, Appendix G.
 
-<figure><img src="../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
 
 Link: [https://ethereum.stackexchange.com/questions/5812/what-is-the-difference-between-transaction-cost-and-execution-cost-in-remix](https://ethereum.stackexchange.com/questions/5812/what-is-the-difference-between-transaction-cost-and-execution-cost-in-remix)

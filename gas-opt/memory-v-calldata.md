@@ -31,7 +31,7 @@ function doSome(bytes memory data) external {}
 * By declaring `calldata`, you can avoid the overhead of copying data into `memory` and reduce the amount of gas needed to execute the function. \[`CALLDATALOAD]`
 * `memory` is more expensive than `calldata`. Because, it will copy the data from calldata into local memory, as an additional step. \[`CALLDATACOPY]`
 
-<figure><img src="../.gitbook/assets/image (309).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (331).png" alt=""><figcaption></figcaption></figure>
 
 ### Why bother using memory then?
 

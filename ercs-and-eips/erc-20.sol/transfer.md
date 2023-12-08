@@ -11,7 +11,7 @@ transfer() is called on when we want to initiate a transfer of tokens **from our
 
 One usage of this would be in a dApp Vendor contract that sells ''yourToken'' for a price. The Vendor will transfer tokens from itself to the user when a purchase it made. For example, userA wants to buy tokens from a Vendor (service contract).
 
-![](<../../.gitbook/assets/image (61) (1).png>)
+![](<../../.gitbook/assets/image (311).png>)
 
 * userA calls buyTokens() which is a function of the service contract (Vendor.sol), and sends some amount of ETH.
 * after inventory checks clear, service contract calls token contract (yourToken.sol), instructing a transfer(_to =_ msg.sender, tokenQty)
@@ -31,7 +31,7 @@ transfer() calls two other functions, `_msgSender()` and `_transfer()`.
 
 \_msgSender() is inherited from Context.sol, which is an abstract contract, defined as follows:
 
-![](<../../.gitbook/assets/image (244).png>)
+![](<../../.gitbook/assets/image (266).png>)
 
 From `Context.sol`'s perspective, the function caller is the service contract, so msg.sender within this scope returns Vendor's address to be captured in `owner`.&#x20;
 

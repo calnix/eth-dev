@@ -32,7 +32,7 @@ contract SendMoneyExample {
 
 * The msg-object is a global always-existing object containing a some information about the ongoing transaction.&#x20;
 
-![msg object fields](<../../../.gitbook/assets/image (300).png>)
+![msg object fields](<../../../.gitbook/assets/image (322).png>)
 
 * The two most important properties are .value and .sender.&#x20;
   * .value contains the amount of Wei that was sent to the smart contract.&#x20;

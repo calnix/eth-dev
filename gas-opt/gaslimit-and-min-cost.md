@@ -1,6 +1,6 @@
 # gasLimit & min cost
 
-<figure><img src="../.gitbook/assets/image (220).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
 
 **gasLimit**
 
@@ -19,7 +19,7 @@ They have to compute it to know much it will require. So it makes more sense for
 
 The execution of a transaction defines a state transition. To that end, any transactions executed must first pass the initial tests of intrinsic validity, as mentioned in the yellow paper. These tests require 21,000 gas.
 
-<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption><p>requires 21,000 gas</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption><p>requires 21,000 gas</p></figcaption></figure>
 
 {% hint style="info" %}
 Therefore, every transaction costs at least 21,000 gas

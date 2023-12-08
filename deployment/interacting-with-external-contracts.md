@@ -13,7 +13,7 @@ Once you extract the ABI:
 
 Ensure the abi starts off in this manner: \[{....
 
-![](<../.gitbook/assets/image (11) (1).png>)
+![](<../.gitbook/assets/image (31).png>)
 
 If it starts with abi =\[.. you can drop that bit.
 
@@ -33,7 +33,7 @@ contract = Contract.from_abi("IdleGame", contract_address, contract_abi)
 
 ```
 
-![](<../.gitbook/assets/image (114).png>)
+![](<../.gitbook/assets/image (249).png>)
 
 #### Some reference:
 

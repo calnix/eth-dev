@@ -21,7 +21,7 @@ The domainSeparator is a value unique to each domain that is ‘mixed in’ the 
 * EIP-712’s standard encoding prefix is \x19\x01, so the final digest is: `bytes32 digest = keccak256(abi.encodePacked("\x19\x01", domainSeparator, hash));`&#x20;
 * The signature created by the seller is stored off-chain (v, r, s are the values for the transaction's signature).
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 * Subsequently, when a prospective buyer wishes to make a purchase, he would do so with the buy function.&#x20;
 * The buy function checks that the sellOrder struct submitted by the buyer lines up with the seller's signature that was previously stored off-chain.&#x20;

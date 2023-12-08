@@ -18,13 +18,13 @@ The hex data field in a transaction is tx.data, or msg.data
 
 **Example of txn data:**
 
-<figure><img src="../../.gitbook/assets/image (60) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (310).png" alt=""><figcaption></figcaption></figure>
 
 * 1st four bytes are fn selector,&#x20;
 * concatenated to it is the first argument
 * addresses have 20 bytes, but abi encoded data is always a multiple of 32 bytes, the **address is left padded with zeros**&#x20;
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 * first 4 bytes is fn selector
 * next 32 bytes is the first argument: left padded with zeros, since address takes 20 bytes
@@ -34,11 +34,11 @@ The hex data field in a transaction is tx.data, or msg.data
 It doesn't matter if the fn argument was a `uint256` or `uint128`, etc, the abi encoded data  will always be 32 bytes
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 ## Staticcall
 
-<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
 **Parameters for staticcall:**
 
@@ -52,11 +52,11 @@ It doesn't matter if the fn argument was a `uint256` or `uint128`, etc, the abi 
 
 ## Dynamic Length Arguments
 
-<figure><img src="../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 If we pass, `a = 7`, `b = [1,2,3]`, `c = 9,` **this is what the calldata will look like:**
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 * 0x00 -> 7&#x20;
 * 0x20 -> pointer to where the array begins, which is 0x60 - 0xc0

@@ -42,7 +42,7 @@ contract SimpleMappingExample {
 }
 ```
 
-![](<../../../.gitbook/assets/image (110).png>)         ![](<../../../.gitbook/assets/image (7) (1).png>)
+![](<../../../.gitbook/assets/image (246).png>)         ![](<../../../.gitbook/assets/image (27).png>)
 
 1. On initialization, `myMapping[1]` will return the default bool value of false.&#x20;
 2. Then we call `setValue` setting -> `myMapping[1]` = true
@@ -79,7 +79,7 @@ For the nested mapping above, the outer mapping maps a host of integers to a set
 
 Each key leads to a different inner mapping. As such, you would need a 2nd parameter (\_key2) for the inner mapping.&#x20;
 
-![](<../../../.gitbook/assets/image (296).png>)
+![](<../../../.gitbook/assets/image (83).png>)
 
 ## Key and value types allowed <a href="#3d0a" id="3d0a"></a>
 
@@ -87,7 +87,7 @@ Not every data type can be used as a key ->  **`struct`** and **`mapping`** cann
 
 Solidity does not limit the data type for values. It can be anything, including `struct` and `mapping.`
 
-![](<../../../.gitbook/assets/image (130).png>)
+![](<../../../.gitbook/assets/image (257).png>)
 
 ### Example: tracking balances and withdrawals
 

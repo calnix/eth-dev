@@ -17,7 +17,7 @@ Off-chain RNG, but verifiable on-chain.
 3. The VRF Coordinator hands this request to an off-chain chainlink oracle for RNG.
 4. After RNG, VRF Coordinator verifies the randomness of the result on-chain.
 
-![](<../.gitbook/assets/image (66).png>)
+![](<../.gitbook/assets/image (142).png>)
 
 ## Application
 
@@ -82,7 +82,7 @@ MyContract inherits VRFConsumerBase, and therefore its constructor as well.
 
 #### VRFConsumerBase constructor requires two inputs,&#x20;
 
-![VRFConsumerBase constructor](<../.gitbook/assets/image (127).png>)
+![VRFConsumerBase constructor](<../.gitbook/assets/image (255).png>)
 
 * \_vrfCoordinator -> address of the VRF coordinator contract on the chain we are deploying to.
 * \_link -> address of the Link token contract on the chain.
@@ -91,7 +91,7 @@ VRF Coordinator is a smart contract that receives requests, hands them off-chain
 
 The random number generation is done off-chain via chainlink's oracle network. &#x20;
 
-![](<../.gitbook/assets/image (58).png>)
+![](<../.gitbook/assets/image (200).png>)
 
 ### Request randomness
 
@@ -133,7 +133,7 @@ VRF will call this, by passing the requestID and randomness. We will catch the R
 
 Techincally, VRFConsumerBase calls `rawFulfillRandomness()` on verification: &#x20;
 
-![results in fulfillRandomness being called](<../.gitbook/assets/image (196).png>)
+![results in fulfillRandomness being called](<../.gitbook/assets/image (319).png>)
 
 This ensures that only VRF coordinator can respond and call `fulfillRandomness`, to prevent spoofed responses.&#x20;
 
@@ -149,9 +149,9 @@ VRF Coordinator looks for the function signature of fulfillRandomness on our con
 
 `requestRandomness()` will call `transferAndCall()` through the LINK interface&#x20;
 
-![VRFConsumerBase.sol](<../.gitbook/assets/image (143).png>)
+![VRFConsumerBase.sol](<../.gitbook/assets/image (165).png>)
 
-![LinkTokenInterface.sol](<../.gitbook/assets/image (265).png>)
+![LinkTokenInterface.sol](<../.gitbook/assets/image (289).png>)
 
 transferAndCall() originates from the LINK token contract, and is interacted with through an interface that was imported: LinkTokenInterface.sol
 

@@ -9,4 +9,4 @@ along with `msg.sender` there are other `msg` special global variables that are 
 * `msg.sig` — The first four bytes of the calldata for a function that specifies the function to be called (i.e., function selector)
 * `msg.value` — The amount of wei sent with a message to a contract (wei is a denomination of ETH)
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>

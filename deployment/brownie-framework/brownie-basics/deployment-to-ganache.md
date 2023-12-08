@@ -27,7 +27,7 @@ simple\_storage will store the return of the .deploy function -> it is a contrac
 
 The output, when printing simple\_storage is the smart contract address:
 
-![](<../../../.gitbook/assets/image (128).png>)
+![](<../../../.gitbook/assets/image (256).png>)
 
 {% hint style="info" %}
 When brownie compiles the project, it creates `ContractContainer` objects for each deployable contract.&#x20;

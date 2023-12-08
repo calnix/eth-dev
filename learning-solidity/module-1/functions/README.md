@@ -2,7 +2,7 @@
 
 ## **Function Structure**
 
-![Example](<../../../.gitbook/assets/image (154).png>)
+![Example](<../../../.gitbook/assets/image (176).png>)
 
 * `public` -> visibility declaration&#x20;
 * `view` -> Indicates function behavior
@@ -17,7 +17,7 @@ function functionName(parameter1, parameter2) {public|private|internal|external}
 
 #### A function declarations only impose scope and do nothing for security
 
-![](<../../../.gitbook/assets/image (52).png>)
+![](<../../../.gitbook/assets/image (72).png>)
 
 ### Simply put:
 

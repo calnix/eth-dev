@@ -19,7 +19,7 @@ You should see 3 directories:
 * src -> default directory for contracts
 * test -> default directory for tests
 
-![](<../.gitbook/assets/image (100).png>)
+![](<../.gitbook/assets/image (236).png>)
 
 You can configure where Forge looks for both dependencies and contracts using the `--lib-paths` and `--contracts` flags respectively. Alternatively you can configure it in `foundry.toml`
 

@@ -38,7 +38,7 @@ brownie accounts new freecodecamp-account
 
 Terminal will request for your private key:
 
-![](<../../../.gitbook/assets/image (106).png>)
+![](<../../../.gitbook/assets/image (242).png>)
 
 Add 0x to the front of the private key before pasting it in. Brownie will password encrypt the private key.
 
@@ -46,7 +46,7 @@ Add 0x to the front of the private key before pasting it in. Brownie will passwo
 
 > &#x20;\> brownie accounts list
 
-![](<../../../.gitbook/assets/image (225).png>)
+![](<../../../.gitbook/assets/image (106).png>)
 
 this will list all the accounts user has added.
 
