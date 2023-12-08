@@ -54,9 +54,9 @@ bool flag = flags[dynamicIndex][lengthTwoIndex];
 * When declaring, we are declaring in reverse, from bottom to the top-most level.&#x20;
 * When slicing/indexing, we operate normally, from top down.
 
-### Ex 1: Mixed-size array, nested dynamic
+### Mixed-size: nested dynamic
 
-Fixed-size applied to the top level of nesting.&#x20;
+Fixed-size applied to the top level of nesting.  The nested elements can be of any length.
 
 * **\[** \[0,1], \[2], \[3], \[7,8,9] **]**
 
@@ -77,7 +77,6 @@ contract MixedTest{
 
     function mixedStorage() public returns(uint256) {
         
-        //since top fixed, cannot push
         values[0] = [0, 1];     
         values[1] = [2];
         values[2] = [2];
@@ -92,7 +91,11 @@ contract MixedTest{
 
 * Can add as many nested elements as needed. no restrictions.
 * If its a storage array, we can use push to add new elements.
-* values\[0] = \[0, 1, 13]
+* **values\[0] = \[0, 1, 13]**
+
+{% hint style="warning" %}
+Push is only for storage arrays
+{% endhint %}
 
 #### Memory
 
