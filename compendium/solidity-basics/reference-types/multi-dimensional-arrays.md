@@ -125,10 +125,12 @@ Push is only for storage arrays
     }
 ```
 
-**Use loop to populate elements of a nested array**
+* values\[0] is of length 2
+* values\[1] is of length 3
+
+#### **Use loop to populate elements of a nested array**
 
 ```solidity
-    
     function mixedMem2() public pure returns(uint256){
         // nested "dynamic". 4 top.
         uint256[][] memory tree = new uint256[][](4);
@@ -143,9 +145,15 @@ Push is only for storage arrays
     }
 ```
 
+* nodes and tree\[0] are connected by the same memory reference
+* any changes made to one, is reflected in the other, as the same memory location is being updated.
+* **tree\[0] = \[6,6,6] = nodes**
 
-
-
+{% hint style="info" %}
+* Dynamic nested arrays in memory are possible contingent on the fact that their lengths are defined before assignment.&#x20;
+* This reduces them to a fixed-size array.
+* However, they are "dynamic" in that each nested array could be of different length.&#x20;
+{% endhint %}
 
 ### Mixed-size array, top dynamic&#x20;
 
