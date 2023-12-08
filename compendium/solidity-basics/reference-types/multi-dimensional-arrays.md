@@ -94,7 +94,7 @@ contract MixedTest{
 * **values\[0] = \[0, 1, 13]**
 
 {% hint style="warning" %}
-Push is only for storage arrays
+Push is only for **dynamic storage** arrays, as it allows **resizing**.
 {% endhint %}
 
 ### Memory
@@ -164,7 +164,7 @@ Top level is dynamic, can take as many elements as needed. However, each element
 uint256[2][ ] values;
 ```
 
-#### Storage&#x20;
+### Storage&#x20;
 
 ```solidity
 contract MixedTest2 {
@@ -187,7 +187,7 @@ contract MixedTest2 {
 * Cannot **values.push(\[3, 4 , 5]);** as its a fixed-array with 3 elements.
 * Cannot **values\[3] = \[7, 8]**; must use **push method**.
 
-#### Memory
+### Memory
 
 ```solidity
     function memoryMixed() public pure returns(uint256) {
@@ -211,27 +211,82 @@ contract MixedTest2 {
 This might seems redundant. But who knows?
 {% endhint %}
 
-### Nested fixed-fixed
+## Nested fixed-fixed
 
-* 2 top-level elements
-* each element can be an array of fixed size 4
-* \[ \[1,2,3,4], \[5,6,7,8] ]
+### Storage
 
 ```solidity
-    function test1() public pure returns (uint256) {
-        // entirely fixed 
-        uint256[4][2] memory myArr;
+contract FixedFixed{
+    // [ [x,x,x,x], [x,x,x,x] ]
+    uint256[4][2] public myArr;
+
+    function addStorage() public returns(uint256) {
+        //can add all 1 shot
+        myArr = [ [1,2,3,4], [5,6,7,8] ];
         
-        return myArr[1].length;    //length = 4
+        //can add element by element
+        myArr[0] = [1,2,3,4];
+
+        return myArr[0][0]; //1
+    }
+        
+}
+```
+
+### Memory
+
+```solidity
+    function addMemory() public pure returns (uint256) {
+
+        uint256[4][2] memory myArr1;
+
+        // add all
+        myArr1 = [ [uint256(1),2,3,4], [uint256(5),6,7,8] ];
+        
+        myArr1[0] =  [uint256(1),2,3,4];
+        
+        return myArr1.length;    //length = 2
     }
 ```
 
+* Only 2 top-level elements.
+* Each element can be an array of fixed size 4.
 * ```solidity
   myArr.length = 2
   myArr[1].length = 4
   ```
 
-### Example 4: nested dynamic&#x20;
+## Nested Dynamic-Dynamic
+
+### Storage
+
+```solidity
+contract DynDyn{
+    
+    uint256[][] public strArray;
+
+    function addStorage() public returns(uint256) {
+
+        //this won't work. the array has no size
+        //strArray[0] = [0, 1];
+
+        // must push first to size the array
+        strArray.push([1, 2, 3]);   //strArray[0]
+        strArray.push([4]);         //strArray[1]
+        strArray.push([5, 6]);      //strArray[2]
+
+        // then can do direct assignment
+        strArray[0] = [7,8];
+
+        return strArray[0][1]; // 8
+    }
+}
+```
+
+* Cannot do direct assignment (**strArray\[0] = \[0, 1]**) before a push. cos the array has no size.
+* Must
+
+### Memory
 
 ```solidity
     function test2() public pure returns (uint256) {
