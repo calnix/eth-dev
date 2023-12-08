@@ -54,59 +54,116 @@ bool flag = flags[dynamicIndex][lengthTwoIndex];
 * When declaring, we are declaring in reverse, from bottom to the top-most level.&#x20;
 * When slicing/indexing, we operate normally, from top down.
 
-### **Example 1**: mixed-size array
+### Ex 1: Mixed-size array, nested dynamic
 
-Here, the fixed-size 2 refers to the **second level of nesting**, not the first.
+Fixed-size applied to the top level of nesting.&#x20;
 
-* \[ \[1,2], \[3,4], \[5,6], \[7,8], ..... ]
+* **\[** \[0,1], \[2], \[3], \[7,8,9] **]**
 
 ```solidity
-string[2][ ] crypto_names;
+// only 4 top-level elements
+uint256[][4] public values;
 ```
 
-```solidity
-contract CryptoNames {
-    string[2][ ] public crypto_names;
+There can **only** be 4 top level elements, where each element is a dynamic array.&#x20;
 
-    constructor() public {
-        crypto_names.push([“Alice”, “Bob”]);   
-        crypto_names.push([“Carol”, “Dave”]);  
-        crypto_names.push([“Eve”, “Frank”]);   
-        crypto_names.push([“Grace”, “Heidi”]); 
+#### Storage&#x20;
+
+```solidity
+contract MixedTest{
+
+    // top fixed
+    uint256[][4] public values;
+
+    function mixedStorage() public returns(uint256) {
+        
+        //since top fixed, cannot push
+        values[0] = [0, 1];     
+        values[1] = [2];
+        values[2] = [2];
+        values[3] = [3,4,5,6];  
+        
+        //push into nested dynamic array
+        values[0].push(13);  
+
+        return values.length; //returns 4
+    }
+```
+
+* Can add as many nested elements as needed. no restrictions.
+* If its a storage array, we can use push to add new elements.
+* values\[0] = \[0, 1, 13]
+
+#### Memory
+
+* push is not available
+* must init the nested dynamic array w/ a specified length.
+
+```solidity
+    function mixedMem() public pure returns(uint256) {
+
+        // no dynamic in memory.
+        // must init the nested array w/ a specified length.
+        uint256[][4] memory values;
+        values[0] = new uint256[](2);
+        
+        //values[0] = [uint256(1), 2] will not work
+        values[0][0] = 1;
+        values[0][1] = 2;
+    }
+
+    // use loop to populate nested array
+    function mixedMem2() public pure returns(uint256){
+        // nested "dynamic". 4 top.
+        uint256[][] memory tree = new uint256[][](4);
+
+        // create memory reference to nested array
+        uint256 nestedLength = 3;
+        uint256[] memory nodes = tree[0] = new uint256[](nestedLength);
+        
+        // add elements via reference
+        for(uint256 i = 0; i < arrayLength; i++){
+            nodes[i] = 6;          
+    }
+```
+
+
+
+### **Ex 2**: MMixed-size array, top dynamic&#x20;
+
+Top level is dynamic, can take as many elements as needed. However, each element must be an array of size 2.
+
+```solidity
+// [ [1,2], [3,4], [5,6], [7,8], ..... ]
+uint256[2][ ] values;
+```
+
+#### Storage&#x20;
+
+```solidity
+contract MixedTest2 {
+
+    uint256[2][ ] public values;
+
+    function addElements() public returns(uint256) {
+        values.push([1, 2]);   
+        values.push([3, 4]);   
+        values.push([5, 6]);   
+        
+        // cannot: values[3] = [7, 8];
+        // will revert
+        
+        return values.length; //3
     }
 }
 ```
 
-* crypto\_names is a dynamically sized array, containing elements that are fixed-sized arrays, length 2.
-* cannot **crypto\_names.push(\["Ivan", "Judy", "Mallory"]);** as its a fixed-array with 3 elements.
+* Cannot **values.push(\[3, 4 , 5]);** as its a fixed-array with 3 elements.
+* Cannot **values\[3] = \[7, 8]**; must use **push method**.
 
-### Example 2: mixed-size array
+#### Memory
 
-Fixed-size applied to the top level of nesting.&#x20;
 
-* \[ \[0,1], \[2], \[3], \[4], \[5], \[6], \[7,8,9] ]
-
-```solidity
-string[ ][6] names_A_to_F;
-```
-
-There can **only** be 6 top level elements, where each element is a dynamic array.&#x20;
-
-```solidity
-contract NamesAlphabet {
-
-    string[][6] public names_A_to_F;
-
-    constructor() public {
-        names_A_to_F[0] = ["Alice"];
-        names_A_to_F[1] = ["Bob"];
-        names_A_to_F[2] = ["Carol", "Carlos", "Charlie", "Chuck", "Craig"];
-        names_A_to_F[3] = ["Dan", "Dave", "David"];
-        names_A_to_F[4] = ["Erin", "Eve"];
-    }
-```
-
-* Can add as many nested elements as neeeded. no restrictions.
 
 ### Example 3: nested fixed
 
@@ -143,3 +200,4 @@ contract NamesAlphabet {
 
 * tree.length = 0
 * tree\[0].length will revert.
+
