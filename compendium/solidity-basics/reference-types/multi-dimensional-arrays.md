@@ -54,7 +54,7 @@ bool flag = flags[dynamicIndex][lengthTwoIndex];
 * When declaring, we are declaring in reverse, from bottom to the top-most level.&#x20;
 * When slicing/indexing, we operate normally, from top down.
 
-### Mixed-size: nested dynamic
+## Mixed-size: nested dynamic
 
 Fixed-size applied to the top level of nesting.  The nested elements can be of any length.
 
@@ -67,7 +67,7 @@ uint256[][4] public values;
 
 There can **only** be 4 top level elements, where each element is a dynamic array.&#x20;
 
-#### Storage&#x20;
+### Storage&#x20;
 
 ```solidity
 contract MixedTest{
@@ -97,15 +97,17 @@ contract MixedTest{
 Push is only for storage arrays
 {% endhint %}
 
-#### Memory
+### Memory
 
 * push is not available
-* must init the nested dynamic array w/ a specified length.
+* Must init the nested dynamic array with a specified length.
+* However, each nested array can have a different length.
+* "Free-sizing" arrays are not allowed in memory - their lengths must be defined and unchanged for memory allocation.&#x20;
 
 ```solidity
     function mixedMem() public pure returns(uint256) {
 
-        // no dynamic in memory.
+        // no "free-sizing" in memory.
         // must init the nested array w/ a specified length.
         uint256[][4] memory values;
         values[0] = new uint256[](2);
@@ -113,9 +115,20 @@ Push is only for storage arrays
         //values[0] = [uint256(1), 2] will not work
         values[0][0] = 1;
         values[0][1] = 2;
-    }
 
-    // use loop to populate nested array
+        //value[1]: len 3
+        values[1][0] = 2;
+        values[1][1] = 3;
+        values[1][2] = 4;
+        
+        return values[1][2]; // returns 4
+    }
+```
+
+**Use loop to populate elements of a nested array**
+
+```solidity
+    
     function mixedMem2() public pure returns(uint256){
         // nested "dynamic". 4 top.
         uint256[][] memory tree = new uint256[][](4);
@@ -132,7 +145,9 @@ Push is only for storage arrays
 
 
 
-### **Ex 2**: MMixed-size array, top dynamic&#x20;
+
+
+### Mixed-size array, top dynamic&#x20;
 
 Top level is dynamic, can take as many elements as needed. However, each element must be an array of size 2.
 
