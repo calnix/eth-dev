@@ -155,7 +155,7 @@ Push is only for storage arrays
 * However, they are "dynamic" in that each nested array could be of different length.&#x20;
 {% endhint %}
 
-### Mixed-size array, top dynamic&#x20;
+## Mixed-size array, top dynamic&#x20;
 
 Top level is dynamic, can take as many elements as needed. However, each element must be an array of size 2.
 
@@ -189,9 +189,29 @@ contract MixedTest2 {
 
 #### Memory
 
+```solidity
+    function memoryMixed() public pure returns(uint256) {
+        uint256[2][] memory values;
 
+        //top is dynamic: so must define size. 
+        values = new uint256[2][](2);
 
-### Example 3: nested fixed
+        //2nd ele
+        values[1] = [uint256(3), 4];
+        
+        return values[1][1]; //4
+    }
+```
+
+* The top level is dynamic and its length is undefined;&#x20;
+* We must first define it.&#x20;
+* In doing so it becomes a nested fixed-fixed array.
+
+{% hint style="info" %}
+This might seems redundant. But who knows?
+{% endhint %}
+
+### Nested fixed-fixed
 
 * 2 top-level elements
 * each element can be an array of fixed size 4
