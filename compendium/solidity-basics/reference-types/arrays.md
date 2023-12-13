@@ -21,6 +21,20 @@
 * size of the array is not mentioned during the declaration.
 * size of the dynamic array can be changed during the runtime as elements are added/removed.
 
+### **Methods**
+
+* length
+* delete
+* push/pop (only for dynamic)
+
+In a fixed-size array, we can not insert a new element as it increases the length of an array. To insert a new element in the dynamic size array we use the push method; this increases the length.
+
+{% hint style="info" %}
+#### **push():** append a zero-initialized element
+
+#### **push(X):** append X&#x20;
+{% endhint %}
+
 ### **Init arrays**
 
 **Fixed arrays:**
@@ -29,26 +43,13 @@
 * can partially assign, as seen in `initializeFixedArr2()`. **fixedArr2 = \[6,0,0]**
 * length is 3, as elements are initialized to default values.
 
-**Dynamic arrays:**
-
-* have not defined no. of elements.
-* so cannot call dynArr\[0]. will revert.
-* must init w/ values first.
-* default length of 0.&#x20;
-
 ```solidity
-contract Array {
-
-    // Several ways to initialize an array
-    uint[] public dynArr;
-    uint[] public dynArr2 = [1, 2, 3];    
+contract FixedArray {
 
     // Fixed sized array, all elements initialize to 0
     uint[3] public fixedArr1;
     uint[3] public fixedArr2;
     uint[3] public x = [8, 15, 32];
-
-    // FIXED
 
     function updateFixedArr1() public {
         fixedArr1 = [21, 232, 43];
@@ -61,9 +62,24 @@ contract Array {
     function getFixedLength() public view returns (uint) {
         return fixedArr1.length;
     }
+}
+```
 
-    // DYNAMIC
+**Dynamic arrays:**
 
+* have not defined number of elements.&#x20;
+* therefore no elements or default values exist.
+* cannot call **dynArr\[0]**. will revert.
+* default length of 0.&#x20;
+* must init w/ values first.
+
+```solidity
+contract DynamicArray {
+
+    // Several ways to initialize an array
+    uint[] public dynArr;
+    uint[] public dynArr2 = [1, 2, 3];    
+    
     // will fail if dynArr has not been assigned any elements.
     // also, not needed, since dynArr is public.
     function get(uint i) public view returns (uint) {
@@ -79,26 +95,12 @@ contract Array {
 * When calling **`get`** on **`dynArr`** it will revert, as no assignment has been done.
 * Can call `length` on an unassigned array, it will return 0.
 
-### **Methods**
-
-* length
-* delete
-* push/pop (only for dynamic)
-
-In a fixed-size array, we can not insert a new element as it increases the length of an array. To insert a new element in the dynamic size array we use the push method; this increases the length.
-
-{% hint style="info" %}
-#### **push():** append a zero-initialized element
-
-#### **push(X):** append X&#x20;
-{% endhint %}
-
 ```solidity
 contract Array {
 
     // Several ways to initialize an array
-    uint256[] public dynArr;
- 
+    uint256[] public dynArr; 
+    
     // will fail is dynArr has not been assigned any elements.
     // also, not needed, since dynArr is public.
     function get(uint i) public view returns (uint) {
@@ -124,7 +126,6 @@ contract Array {
     // Delete does not change the array length.
     // It resets the value at index to it's default value,
     function remove(uint index) public {
-
         delete dynArr[index];
     }
 }
