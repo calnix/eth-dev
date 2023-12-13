@@ -146,6 +146,11 @@ contract Array {
 * delete dynArr\[1]  ->  dynArr = \[11, **0**, 13]
 * length remains 3
 
+{% hint style="info" %}
+* push/pop modify length
+* delete does not modify length
+{% endhint %}
+
 ### Removing a specific element
 
 1. **Remove array element by shifting elements from right to left**
