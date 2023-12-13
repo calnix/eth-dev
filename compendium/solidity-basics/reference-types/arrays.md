@@ -363,9 +363,9 @@ storage layout  of dynamic nested arrays: [https://www.youtube.com/watch?v=Zi4BA
 
 ## Storage pointers and Data Location Effects
 
-* myArray is not a separate unique array that is created from coders.&#x20;
+* **myArray** is not a separate unique array that is created from **x**.&#x20;
 * its a pointer to the location in storage where coders resides.
-* modifying values through the pointer will affect both myArray and coders.
+* modifying values through the storage pointer will affect both myArray and x.
 
 ```solidity
 contract StorageDemo {
@@ -384,13 +384,13 @@ contract StorageDemo {
         uint[] storage myArray = x;
         
         // this creates a copy in memory
-        uint[] memory memArray = coders;
+        uint[] memory memArray = x;
 
         // Overwrites x[0]: 2 -> 66
         myArray[0] = 66;
         assert(x[0] == 66); // true
 
-        // returns 2 
+        // returns 2: mem copy unchanged
         return memArray[0]; 
     } 
 }
@@ -398,12 +398,12 @@ contract StorageDemo {
 
 {% hint style="info" %}
 * **Assignments between `storage` and `memory` (or from `calldata`) always create an independent copy**
-* **see:** uint\[] memory memArray = coders;
+* **see:** uint\[] memory memArray = x;
 {% endhint %}
 
 {% hint style="info" %}
 * **Assignments from `storage` to a local `storage` variable also only assign a reference**
-* **see:** uint\[] storage myArray = coders;
+* **see:** uint\[] storage myArray = x;
 {% endhint %}
 
 ### Assignments to `storage` always copy, even if sourcing from reference variables
