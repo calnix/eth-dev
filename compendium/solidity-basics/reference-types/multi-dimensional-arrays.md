@@ -22,9 +22,11 @@
 
 ### Indexing and Referencing
 
-Things may be a little counter-intuitive because the **X & Y axis are reversed.**
+* Things may be a little counter-intuitive because the **X & Y axis are reversed.**
+* **This applies during declaration.**&#x20;
 
 ```solidity
+// [...[2,3],[1,2],[4,3],...]
 bool[2][] flags;
 ```
 
@@ -76,21 +78,22 @@ contract MixedTest{
     uint256[][4] public values;
 
     function mixedStorage() public returns(uint256) {
-        
+    
+        //since top fixed, cannot push: values.push();
         values[0] = [0, 1];     
         values[1] = [2];
         values[2] = [2];
         values[3] = [3,4,5,6];  
         
-        //push into nested dynamic array
+        //push into nested dynamic array: values[0] = [0, 1, 13]
         values[0].push(13);  
 
         return values.length; //returns 4
     }
 ```
 
-* Can add as many nested elements as needed. no restrictions.
-* If its a storage array, we can use push to add new elements.
+* Can add as many nested elements as needed. No restrictions.
+* If its a dynamic storage array, we can use push to add new elements.
 * **values\[0] = \[0, 1, 13]**
 
 {% hint style="warning" %}
@@ -110,8 +113,10 @@ Push is only for **dynamic storage** arrays, as it allows **resizing**.
         // no "free-sizing" in memory.
         // must init the nested array w/ a specified length.
         uint256[][4] memory values;
+        // init nested 
         values[0] = new uint256[](2);
-        
+        values[1] = new uint256[](3);
+
         //values[0] = [uint256(1), 2] will not work
         values[0][0] = 1;
         values[0][1] = 2;
@@ -284,7 +289,7 @@ contract DynDyn{
 ```
 
 * Cannot do direct assignment (**strArray\[0] = \[0, 1]**) before a push. cos the array has no size.
-* Must
+* Must init with push first.
 
 ### Memory
 
@@ -301,4 +306,42 @@ contract DynDyn{
 
 * tree.length = 0
 * tree\[0].length will revert.
+
+```solidity
+    function addMem() public pure returns(uint256) {
+
+        uint256[][] memory memArray;
+        
+        // define the top
+        memArray = new uint256[][](2);
+        
+        // define the nested
+        memArray[0] = new uint256[](1);
+        memArray[1] = new uint256[](2);
+        
+        // assign values
+        memArray[0][0] = 1;
+        
+        memArray[1][0] = 2;
+        memArray[1][1] = 3;
+
+        // memArray: [[1], [2,3]]
+
+        return memArray[1][1]; // 3
+    }
+```
+
+## Others
+
+```solidity
+uint256[10] memory myNumbersArray;
+myNumbersArray = [uint256(0), 100, 200, 300, 400, 500, 600, 700, 800, 900]; 
+	
+	// fixed-dynamic
+        bytes32[][] memory tree = new bytes32[][](2);
+		
+	//fixed fixed
+        bytes32[][] memory tree = new bytes32[3][](2);
+        uint256[2][3] memory values2;
+```
 
