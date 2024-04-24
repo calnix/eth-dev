@@ -92,7 +92,6 @@
   * [Destroying Smart Contracts](compendium/smart-contract-life-cycle/destroying-smart-contracts.md)
 * [Merkle Trie and MPT](compendium/merkle-trie-and-mpt.md)
 * [Merkle Tree Airdrop](compendium/merkle-tree-airdrop.md)
-* [Page](compendium/page.md)
 
 ***
 
@@ -234,6 +233,7 @@
 ## Solidity Patterns
 
 * [checks-effects-interactions pattern](solidity-patterns/checks-effects-interactions-pattern.md)
+* [Router // batch](solidity-patterns/router-batch.md)
 
 ## Deployment
 
