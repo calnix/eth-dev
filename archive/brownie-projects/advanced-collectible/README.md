@@ -9,7 +9,7 @@ Create NFT contract that allows a user to mint a Doggie NFT of random breed. Ran
 
 ### For reference, Simple Collectible:
 
-![](<../../.gitbook/assets/image (325).png>)
+![](<../../../.gitbook/assets/image (325).png>)
 
 ### Constructor and Initial layout
 
@@ -147,7 +147,7 @@ function setTokenURI(uint tokenId, string memory tokenURI) returns() {
 }
 ```
 
-![From ERC721](<../../.gitbook/assets/image (283).png>)
+![From ERC721](<../../../.gitbook/assets/image (283).png>)
 
 For a token that exists, it returns whether 'spender' is allowed to manage 'tokenId'.\_msgSender()
 

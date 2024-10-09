@@ -19,7 +19,7 @@ metadata_template = {
 ```
 {% endcode %}
 
-![](<../../.gitbook/assets/image (326).png>)
+![](<../../../.gitbook/assets/image (326).png>)
 
 ### create\_metadata.py
 
@@ -72,7 +72,7 @@ def main():
 * check number of NFTs minted
 * for each tokenID, get the breed via get_breed(),_ and structure the filename and path as metadata\_filename
 
-![metadata\_filenamecollectible\_metadata](<../../.gitbook/assets/image (315).png>)
+![metadata\_filenamecollectible\_metadata](<../../../.gitbook/assets/image (315).png>)
 
 * collectible\_metadata collects the metadata\_template to be used as a base for modification
 * We then check if the required metadata\_filename exists, using Path library.&#x20;
@@ -93,7 +93,7 @@ Interestingly, ipfs daemon command works in terminal, command prompt.
 
 On running ipfs daemon on terminal we will see the following:
 
-![](<../../.gitbook/assets/image (100).png>)
+![](<../../../.gitbook/assets/image (100).png>)
 
 We will be working with **/api/v0/add** to add our file to IPFS: [https://docs.ipfs.io/reference/http/api/#http-rpc-commands](https://docs.ipfs.io/reference/http/api/#http-rpc-commands)
 
@@ -148,7 +148,7 @@ def main():
 * response -> structuring and sending a post response (can also use curl)
 * ipfs\_hash -> response returns JSON string on successful call to endpoint - decode it as a python dict via .json()
 
-![reponse returns a dictionary](<../../.gitbook/assets/image (230).png>)
+![reponse returns a dictionary](<../../../.gitbook/assets/image (230).png>)
 
 * extract filename from filepath and together with the IPFS hash, construct the image URI
 
@@ -182,7 +182,7 @@ This will create a json file in our metadata/rinkeby folder upon running:
 
 `brownie run scripts/advcollectible/create_metadata.py --network rinkeby`
 
-![](<../../.gitbook/assets/image (86).png>)
+![](<../../../.gitbook/assets/image (86).png>)
 
 #### Final code at this point:
 
@@ -256,8 +256,8 @@ Reference: [https://docs.pinata.cloud/api-pinning/pin-file](https://docs.pinata.
 
 
 
-![](<../../.gitbook/assets/image (250).png>)
+![](<../../../.gitbook/assets/image (250).png>)
 
 You should also see the pinned file:
 
-![](<../../.gitbook/assets/image (26).png>)
+![](<../../../.gitbook/assets/image (26).png>)

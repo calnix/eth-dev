@@ -9,7 +9,7 @@ Learn how to use:
 
 ### Background
 
-![](<../../.gitbook/assets/image (227).png>)
+![](<../../../.gitbook/assets/image (227).png>)
 
 Some new item costs X.
 
