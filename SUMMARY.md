@@ -132,7 +132,7 @@
 * [UUPS Example](upgradable-contracts/uups-example.md)
 * [Minimal Proxy Example](upgradable-contracts/minimal-proxy-example.md)
 * [TPP Example](upgradable-contracts/tpp-example.md)
-* [🚧 Diamond](upgradable-contracts/diamond/README.md)
+* [🚧 Diamond](upgradable-contracts/diamond.md)
   * [On Storage](upgradable-contracts/diamond/on-storage.md)
 
 ## Gas Opt
