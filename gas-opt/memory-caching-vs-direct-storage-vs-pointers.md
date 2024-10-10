@@ -171,7 +171,7 @@ pragma solidity 0.8.20;
 contract Counter1 {
     uint256 public number;
 
-    function increment() public {
+    function increment1() public {
         require(number < 10);
         number = number + 1;
     }
@@ -180,7 +180,7 @@ contract Counter1 {
 contract Counter2 {
     uint256 public number;
 
-    function increment() public {
+    function increment2() public {
         uint256 _number = number;
         require(_number < 10);
         number = _number + 1;
@@ -188,4 +188,6 @@ contract Counter2 {
 }
 ```
 
-The first function reads counter twice, the second code reads it once.
+* `increment1` reads number from storage multiple times; each subsequent SLOAD after the first costs 100 gas
+* `increment2` caches to avoid repeated SLOADs
+
