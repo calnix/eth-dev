@@ -141,6 +141,7 @@
 * [gasLimit & min cost](gas-opt/gaslimit-and-min-cost.md)
 * [Solidity Optimiser](gas-opt/solidity-optimiser.md)
 * [Memory v calldata](gas-opt/memory-v-calldata.md)
+* [Memory caching vs direct storage vs pointers](gas-opt/memory-caching-vs-direct-storage-vs-pointers.md)
 * [<  vs  <=](gas-opt/less-than-vs-less-than.md)
 * [reverting early](gas-opt/reverting-early.md)
 * [X && Y, ||](gas-opt/x-and-and-y-or-or.md)

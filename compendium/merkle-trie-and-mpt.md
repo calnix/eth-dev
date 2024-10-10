@@ -53,7 +53,7 @@ An ordered tree data structure that is used to store a dynamic set or associativ
 \
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
@@ -69,7 +69,7 @@ Block header in Ethereum contains 3 merkle trees roots:
 * Receipts (receiptsRoot)
 * State  (stateRoot)
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **State trie:**&#x20;
 
@@ -94,11 +94,11 @@ Ethereum accounts are added to the state trie only after a successful transactio
 
 **Example of storing the mapping between account address and ether balance.**
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
-### Merkle Vs Merkle-Patricia <a href="#784e" id="784e"></a>
+### Merkle Vs Merkle-Patricia <a href="#id-784e" id="id-784e"></a>
 
 Since we have seen both Merkle tree and Merkle Patricia tree, let us analyze some of the major differences that keeps them separate.
 
