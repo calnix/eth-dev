@@ -235,6 +235,8 @@
 
 * [checks-effects-interactions pattern](solidity-patterns/checks-effects-interactions-pattern.md)
 * [Router // batch](solidity-patterns/router-batch.md)
+* [claimDelegate: stack unique owners](solidity-patterns/claimdelegate-stack-unique-owners.md)
+* [claimDelegate: cache previous user](solidity-patterns/claimdelegate-cache-previous-user.md)
 
 ## Deployment
 
