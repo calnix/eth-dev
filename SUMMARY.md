@@ -238,6 +238,10 @@
 * [claimDelegate: stack unique owners](solidity-patterns/claimdelegate-stack-unique-owners.md)
 * [claimDelegate: cache previous user](solidity-patterns/claimdelegate-cache-previous-user.md)
 
+***
+
+* [Array: dup/ascending check](array-dup-ascending-check.md)
+
 ## Deployment
 
 * [Behind the Scenes](deployment/behind-the-scenes.md)
@@ -262,7 +266,7 @@
     * [Brownie console](archive/brownie-framework/brownie-basics/brownie-console.md)
   * [Brownie Advanced](archive/brownie-framework/brownie-advanced/README.md)
     * [Dependencies: import contracts](archive/brownie-framework/brownie-advanced/dependencies-import-contracts.md)
-    * [helpful\_scripts.py](archive/brownie-framework/brownie-advanced/helpful\_scripts.py.md)
+    * [helpful\_scripts.py](archive/brownie-framework/brownie-advanced/helpful_scripts.py.md)
     * [verify and publish](archive/brownie-framework/brownie-advanced/verify-and-publish.md)
     * [Forking and Mocking](archive/brownie-framework/brownie-advanced/forking-and-mocking.md)
     * [Mocking](archive/brownie-framework/brownie-advanced/mocking.md)
@@ -270,9 +274,9 @@
   * [Testing](archive/brownie-framework/testing.md)
   * [Scripts Framework](archive/brownie-framework/scripts-framework/README.md)
     * [deploy.py](archive/brownie-framework/scripts-framework/deploy.py.md)
-    * [get\_accounts](archive/brownie-framework/scripts-framework/get\_accounts.md)
-    * [deploy\_mocks()](archive/brownie-framework/scripts-framework/deploy\_mocks.md)
-    * [fund\_with\_\<token>()](archive/brownie-framework/scripts-framework/fund\_with\_less-than-token-greater-than.md)
+    * [get\_accounts](archive/brownie-framework/scripts-framework/get_accounts.md)
+    * [deploy\_mocks()](archive/brownie-framework/scripts-framework/deploy_mocks.md)
+    * [fund\_with\_\<token>()](archive/brownie-framework/scripts-framework/fund_with_less-than-token-greater-than.md)
   * [Brownie Networks](archive/brownie-framework/brownie-networks.md)
 * [Brownie Projects](archive/brownie-projects/README.md)
   * [SharedWallet](archive/brownie-projects/sharedwallet/README.md)
@@ -291,7 +295,7 @@
     * [Borrow](archive/brownie-projects/aave-lending-and-borrowing/borrow.md)
   * [NFT](archive/brownie-projects/nft.md)
   * [Advanced Collectible](archive/brownie-projects/advanced-collectible/README.md)
-    * [adv\_deploy() + Testing](archive/brownie-projects/advanced-collectible/adv\_deploy-+-testing.md)
+    * [adv\_deploy() + Testing](archive/brownie-projects/advanced-collectible/adv_deploy-+-testing.md)
     * [Create Metadata](archive/brownie-projects/advanced-collectible/create-metadata.md)
     * [Setting the TokenURI](archive/brownie-projects/advanced-collectible/setting-the-tokenuri.md)
 * [node npm](archive/node-npm.md)
